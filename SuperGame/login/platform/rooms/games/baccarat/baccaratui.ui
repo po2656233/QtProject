@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BaccaratUI</class>
+ <widget class="QWidget" name="BaccaratUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>865</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(223, 255, 116);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_banker">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>25</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#ff0000;&quot;&gt;庄&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="label_State">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>44</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>75</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>状态:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLabel" name="label_player">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>25</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#5500ff;&quot;&gt;闲&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" rowspan="3">
+    <layout class="QHBoxLayout" name="horizontalLayout_Logo">
+     <item>
+      <widget class="QLabel" name="label_15">
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../../src/element.qrc">:/img/baccarat/baijiale.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QFrame" name="horizontalFrame">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="UICard" name="poker_1">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="UICard" name="poker_2">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="UICard" name="poker_3">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_Number">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../../../../../src/element.qrc">:/img/number/ddz_result_base_winstrea_0.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="UICard" name="poker_4">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="UICard" name="poker_5">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="UICard" name="poker_6">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="minimumSize">
+      <size>
+       <width>600</width>
+       <height>350</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>600</width>
+       <height>350</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(250, 255, 217);</string>
+     </property>
+     <property name="title">
+      <string>下注区域</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="UIBetArea" name="label_Zhuang">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(247, 180, 255);</string>
+        </property>
+        <property name="text">
+         <string>庄</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="UIBetArea" name="label_Xian">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(247, 180, 255);</string>
+        </property>
+        <property name="text">
+         <string>闲</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="UIBetArea" name="label_ZTW">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(247, 180, 255);</string>
+        </property>
+        <property name="text">
+         <string>庄天王</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="UIBetArea" name="label_XTW">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(247, 180, 255);</string>
+        </property>
+        <property name="text">
+         <string>闲天王</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="UIBetArea" name="label_ZDZ">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(247, 180, 255);</string>
+        </property>
+        <property name="text">
+         <string>庄对子</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="UIBetArea" name="label_XDZ">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(247, 180, 255);</string>
+        </property>
+        <property name="text">
+         <string>闲对子</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" rowspan="3">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="UIBetArea" name="label_Ping">
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(247, 180, 255);</string>
+          </property>
+          <property name="text">
+           <string>平</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="UIBetArea" name="label_TDP">
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(247, 180, 255);</string>
+          </property>
+          <property name="text">
+           <string>同点平</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QListView" name="listView">
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_head">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>120</width>
+           <height>119</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 170, 127);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../../../../../src/element.qrc">:/img/wang.jpg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_name">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_gold">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Clip1">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>119</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(206, 206, 206);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_1.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Clip2">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>119</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(206, 206, 206);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_5.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Clip3">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>119</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(206, 206, 206);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_25.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Clip4">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>119</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(206, 206, 206);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_50.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Clip5">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>119</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(206, 206, 206);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_100.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="3">
+    <widget class="QLabel" name="label_GameInfo">
+     <property name="text">
+      <string>玩家游戏信息</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="UiTextScroll" name="label_scrollText">
+     <property name="minimumSize">
+      <size>
+       <width>200</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>UiTextScroll</class>
+   <extends>QLabel</extends>
+   <header>base/baseui/uitextscroll.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UIBetArea</class>
+   <extends>QLabel</extends>
+   <header>base/baseui/uibetarea.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UICard</class>
+   <extends>QLabel</extends>
+   <header location="global">base/baseui/uicard.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../../../src/element.qrc"/>
+ </resources>
+ <connections/>
+</ui>

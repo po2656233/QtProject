@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CowcowUI</class>
+ <widget class="QWidget" name="CowcowUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1236</width>
+    <height>627</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(170, 170, 255);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_7">
+   <property name="leftMargin">
+    <number>5</number>
+   </property>
+   <item row="1" column="6">
+    <widget class="QLabel" name="label_logo">
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../../../../../src/element.qrc">:/img/cowcow/cowcow.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="6">
+    <widget class="QListView" name="listView">
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_gold">
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_name">
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" rowspan="2">
+      <widget class="QLabel" name="label_head">
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>120</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../../src/element.qrc">:/img/wang.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="label_Clip1">
+     <property name="minimumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_1.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLabel" name="label_Clip2">
+     <property name="minimumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_5.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLabel" name="label_Clip3">
+     <property name="minimumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_25.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QLabel" name="label_Clip4">
+     <property name="minimumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_50.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="6">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="groupBox_tian">
+       <property name="title">
+        <string>天</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_5" rowstretch="4,0,0">
+        <item row="1" column="0">
+         <widget class="UICard" name="label_t1">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="UICard" name="label_t4">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="UICard" name="label_t2">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="UICard" name="label_t3">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="UICard" name="label_t5">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="5">
+         <widget class="UIBetArea" name="label_tian">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 170, 255);</string>
+          </property>
+          <property name="text">
+           <string>tian</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="label_betTian">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>下注额：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3" colspan="2">
+         <widget class="QLabel" name="label_cardVTian">
+          <property name="text">
+           <string>牌值：</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_xuan">
+       <property name="title">
+        <string>玄</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4" rowstretch="4,0,0">
+        <item row="1" column="2">
+         <widget class="UICard" name="label_x3">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="UICard" name="label_x1">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="UICard" name="label_x5">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="UICard" name="label_x2">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="UICard" name="label_x4">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="5">
+         <widget class="UIBetArea" name="label_xuan">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 85, 127);</string>
+          </property>
+          <property name="text">
+           <string>xuan</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+         <widget class="QLabel" name="label_xuanGold">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>下注额：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3" colspan="2">
+         <widget class="QLabel" name="label_cardVXuan">
+          <property name="text">
+           <string>牌值：</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_huang">
+       <property name="title">
+        <string>黄</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QGridLayout" name="gridLayout" rowstretch="4,0,0">
+        <item row="0" column="0" colspan="5">
+         <widget class="UIBetArea" name="label_huang">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 240, 121);</string>
+          </property>
+          <property name="text">
+           <string>huang</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="UICard" name="label_h3">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="UICard" name="label_h1">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="UICard" name="label_h2">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="UICard" name="label_h5">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="UICard" name="label_h4">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+         <widget class="QLabel" name="label_huangGold">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>下注额：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3" colspan="2">
+         <widget class="QLabel" name="label_cardVHuang">
+          <property name="text">
+           <string>牌值：</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_Di">
+       <property name="title">
+        <string>地</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3" rowstretch="4,0,0">
+        <item row="0" column="0" colspan="5">
+         <widget class="UIBetArea" name="label_di">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(170, 170, 127);</string>
+          </property>
+          <property name="text">
+           <string>di</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="UICard" name="label_d2">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="UICard" name="label_d1">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="UICard" name="label_d3">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="UICard" name="label_d5">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="UICard" name="label_d4">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+         <widget class="QLabel" name="label_diGold">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>下注额：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3" colspan="2">
+         <widget class="QLabel" name="label_cardVDi">
+          <property name="text">
+           <string>牌值：</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="6">
+    <widget class="QLabel" name="label_GameInfo">
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>游戏信息展示栏</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QLabel" name="label_Clip5">
+     <property name="minimumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>96</width>
+       <height>96</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../../../../../src/element.qrc">:/img/chips/Chip_100.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="6">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>120</height>
+      </size>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>true</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="acceptDrops">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>庄家</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_State">
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>状态：</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_time">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../../../../../src/element.qrc">:/img/number/ddz_result_base_winstrea_0.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_banker" native="true">
+        <layout class="QGridLayout" name="gridLayout_8">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <item row="1" column="1">
+          <widget class="UICard" name="label_b2">
+           <property name="minimumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="UICard" name="label_b5">
+           <property name="minimumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="UICard" name="label_b4">
+           <property name="minimumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="UICard" name="label_b1">
+           <property name="minimumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="UICard" name="label_b3">
+           <property name="minimumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>45</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="3">
+          <widget class="QLabel" name="label_bankerGold">
+           <property name="text">
+            <string>金币：</string>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3" colspan="2">
+          <widget class="QLabel" name="label_cardVBanker">
+           <property name="text">
+            <string>牌值：</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>UIBetArea</class>
+   <extends>QLabel</extends>
+   <header location="global">base/baseui/uibetarea.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UICard</class>
+   <extends>QLabel</extends>
+   <header location="global">base/baseui/uicard.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../../../src/element.qrc"/>
+ </resources>
+ <connections/>
+</ui>

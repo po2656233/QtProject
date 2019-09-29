@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameFrameUI</class>
+ <widget class="QWidget" name="GameFrameUI">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1006</width>
+    <height>789</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 170, 255);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>9</number>
+   </property>
+   <property name="topMargin">
+    <number>9</number>
+   </property>
+   <property name="rightMargin">
+    <number>9</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
+   <property name="horizontalSpacing">
+    <number>8</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>5</number>
+   </property>
+   <item row="4" column="0" rowspan="3" colspan="3">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 0, 255);</string>
+     </property>
+     <property name="title">
+      <string>关系圈</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="maximumSize">
+      <size>
+       <width>500</width>
+       <height>108</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>个人信息</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelHead">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="imgage.qrc">:/img/icon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="labelName">
+            <property name="text">
+             <string>名字</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelState">
+            <property name="text">
+             <string>状态</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLabel" name="labelGold">
+                <property name="text">
+                 <string>金币</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>点券</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>水晶石</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="UILabel" name="label_newGoods">
+              <property name="minimumSize">
+               <size>
+                <width>44</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(170, 85, 255);</string>
+              </property>
+              <property name="text">
+               <string>新品</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="UILabel" name="label_6">
+              <property name="minimumSize">
+               <size>
+                <width>44</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 170, 127);</string>
+              </property>
+              <property name="text">
+               <string>花园</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="UILabel" name="label_5">
+              <property name="minimumSize">
+               <size>
+                <width>44</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 85, 127);</string>
+              </property>
+              <property name="text">
+               <string>限定</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="UILabel" name="label_9">
+              <property name="minimumSize">
+               <size>
+                <width>44</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(0, 170, 0);</string>
+              </property>
+              <property name="text">
+               <string>签到</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="UILabel" name="label_10">
+              <property name="minimumSize">
+               <size>
+                <width>44</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 0, 0);</string>
+              </property>
+              <property name="text">
+               <string>活动</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="UILabel" name="label_8">
+              <property name="minimumSize">
+               <size>
+                <width>44</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(0, 255, 0);</string>
+              </property>
+              <property name="text">
+               <string>奖励</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="3" colspan="4">
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>120</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 127);</string>
+     </property>
+     <property name="title">
+      <string>游戏资讯</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3" rowspan="2" colspan="4">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 255, 127);</string>
+     </property>
+     <property name="title">
+      <string>活动展示</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>120</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>120</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 0, 0);</string>
+     </property>
+     <property name="title">
+      <string>公告</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3" colspan="4">
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 127);</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 209, 39);</string>
+     </property>
+     <property name="text">
+      <string>英雄</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label">
+     <property name="minimumSize">
+      <size>
+       <width>120</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>180</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="imgage.qrc">:/img/liaowt.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5">
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 209, 39);</string>
+     </property>
+     <property name="text">
+      <string>公会</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 209, 39);</string>
+     </property>
+     <property name="text">
+      <string>排行榜</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="6">
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 209, 39);</string>
+     </property>
+     <property name="text">
+      <string>商城</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" colspan="4">
+    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,2,0,0,0,0,0">
+     <property name="spacing">
+      <number>5</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetFixedSize</enum>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>1</number>
+     </property>
+     <property name="bottomMargin">
+      <number>30</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="pushButton_Fight">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+       <property name="text">
+        <string>房间1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Multiplayer">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+       <property name="text">
+        <string>房间2</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_SameTable">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+       <property name="text">
+        <string>房间3</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Guess">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+       <property name="text">
+        <string>房间4</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_GamesCity">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+       <property name="text">
+        <string>房间5</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_DualMeet">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+       <property name="text">
+        <string>房间6</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Smart">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+       <property name="text">
+        <string>房间7</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 209, 39);</string>
+     </property>
+     <property name="text">
+      <string>开始游戏</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 209, 39);</string>
+     </property>
+     <property name="text">
+      <string>战绩</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>15</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>UILabel</class>
+   <extends>QLabel</extends>
+   <header>base/baseui/uilabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton_6</tabstop>
+ </tabstops>
+ <resources>
+  <include location="imgage.qrc"/>
+ </resources>
+ <connections/>
+</ui>

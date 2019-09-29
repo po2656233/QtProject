@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginUI</class>
+ <widget class="QWidget" name="LoginUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>526</width>
+    <height>405</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 170, 255);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBoxForget">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>70</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>记住密码</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBoxAgreed">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>70</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>同意条款</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>帐号:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBoxName">
+             <property name="minimumSize">
+              <size>
+               <width>115</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>115</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+             <property name="maxCount">
+              <number>1000</number>
+             </property>
+             <property name="duplicatesEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButtonRegist">
+             <property name="minimumSize">
+              <size>
+               <width>75</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>注册账号</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>密码:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditPassword">
+             <property name="minimumSize">
+              <size>
+               <width>115</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>115</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="frame">
+              <bool>true</bool>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+             <property name="cursorMoveStyle">
+              <enum>Qt::VisualMoveStyle</enum>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButtonForget">
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>忘记密码</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonEnter">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>进入平台</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="0">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="2">
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>460</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>460</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="title">
+        <string>警示语</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#d90000;&quot;&gt;抵制不良游戏   拒绝盗版游戏  注意自我保护   谨防上当受骗&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#d90000;&quot;&gt;适度游戏益脑   沉迷游戏伤身  合理安排时间   享受健康生活&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <widget class="QFrame" name="horizontalFrame_6">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>100</height>
+      </size>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Home">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>官方首页</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_shop">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>商城交易</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>天地沉沦</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_forum">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>官方论坛</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Newbie">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>新手指引</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>comboBoxName</tabstop>
+  <tabstop>lineEditPassword</tabstop>
+  <tabstop>checkBoxAgreed</tabstop>
+  <tabstop>checkBoxForget</tabstop>
+  <tabstop>pushButtonRegist</tabstop>
+  <tabstop>pushButtonForget</tabstop>
+  <tabstop>pushButton_shop</tabstop>
+  <tabstop>pushButton_forum</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

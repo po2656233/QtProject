@@ -1,0 +1,27 @@
+////////////////////////////////////////////////////
+/// 版权(@copyright):  智慧中华(smart china)技术有限公司
+/// 文件(@interface): uitextticker.h 
+/// 版本(@version):   1.0
+/// 作者(@author):    pitter
+/// 日期(@date)  :    2019-06-14 
+/// 功能(@brief) ： 跑马灯
+/// 目的(@target)：             
+/// 备注(@attention): 
+////////////////////////////////////////////////////
+#ifndef UITEXTTICKER_H
+#define UITEXTTICKER_H
+
+#include <QWidget>
+
+class UiTextTicker : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit UiTextTicker(QWidget *parent = nullptr);
+
+signals:
+
+public slots:
+};
+
+#endif // UITEXTTICKER_H

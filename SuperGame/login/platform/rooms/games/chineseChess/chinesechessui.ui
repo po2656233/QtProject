@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChineseChessUI</class>
+ <widget class="QWidget" name="ChineseChessUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>844</width>
+    <height>820</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>816</width>
+    <height>802</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="CheckerBoard" native="true">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>822</width>
+     <height>802</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/img/chineseChess/background.png);</string>
+   </property>
+   <widget class="QLabel" name="label_Jiang">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bjiang.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ShiB2">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bshi.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ZuB3">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>490</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bzu.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_XiangB2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bxiang.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ZuB2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>490</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bzu.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ZuB1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>490</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bzu.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_CheB1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bche.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_MaB1">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bma.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_XiangB1">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bxiang.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ShiB1">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bshi.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ZuB4">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>490</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bzu.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_PaoB2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>570</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bpao.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_CheB2">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bche.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_PaoB1">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>570</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bpao.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_MaB2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>730</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bma.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ZuB5">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>490</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/bzu.png);</string>
+    </property>
+    <property name="indent">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_BingR1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>250</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rbing.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_BingR2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>250</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rbing.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_BingR3">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>250</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rbing.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_BingR4">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>250</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rbing.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_PaoR2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>170</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rpao.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_BingR5">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>250</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rbing.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_PaoR1">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>170</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rpao.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_JunR1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rche.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_JunR2">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rche.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_MaR1">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rma.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_XiangR1">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rxiang.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_MaR2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rma.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_XiangR2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rxiang.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ShiR1">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rshi.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ShiR2">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/rshi.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Shuai">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>10</y>
+      <width>80</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>80</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/icon.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_RTime">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>200</y>
+      <width>61</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft PhagsPa</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/timeBG.png);</string>
+    </property>
+    <property name="text">
+     <string>计时器</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="indent">
+     <number>4</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_BTime">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>560</y>
+      <width>61</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft PhagsPa</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/chineseChess/timeBG.png);</string>
+    </property>
+    <property name="text">
+     <string>计时器</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="indent">
+     <number>4</number>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

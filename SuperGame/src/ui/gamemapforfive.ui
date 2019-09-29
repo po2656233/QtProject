@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameMapForFive</class>
+ <widget class="QWidget" name="GameMapForFive">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>920</width>
+    <height>579</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>red_play_4</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>290</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>red_play_5</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>210</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>red_play_3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>270</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>red_play_2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>230</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>red_play_1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>300</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>blue_play_5</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>220</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>blue_play_3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>280</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>blue_play_2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>260</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>blue_play_4</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>240</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>bule_play_1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>90</y>
+     <width>54</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>太极点</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>440</y>
+     <width>54</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>太极点</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>260</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>汇点</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>270</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>不对称点(互殴点)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>480</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>天和</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>423</x>
+     <y>300</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>人和</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>70</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>地和</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>40</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>原点轮换</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>520</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>和部插旗</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>160</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>八卦一</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_21">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>390</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>八卦二</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>90</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>春</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>270</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>夏</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_24">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>480</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>秋</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_25">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>260</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>冬</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_26">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>460</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>风泽火雷林</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_27">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>120</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>金木水火土</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
