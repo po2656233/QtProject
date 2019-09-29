@@ -1,6 +1,9 @@
 
 本工程是基于Qt5.10 开发的 游戏平台 客户端.
-protobuf 3.7.0版本 与之对应的服务端 https://github.com/po2656233/go_project/tree/master/src
+protobuf 3.7.0版本 
+
+与之对应的服务端 
+https://github.com/po2656233/go_project/tree/master/src
 
 1.登录流程:
 平台登录->大厅->房间(类型)列表->游戏列表->子游戏.
@@ -19,14 +22,22 @@ protobuf 3.7.0版本 与之对应的服务端 https://github.com/po2656233/go_pr
 
 
 4.待拓展
+
 1、新增KCP协议 实现帧同步游戏
+
 2、新增子游戏内部聊天服务器
+
 3、更友好地支持集群分布
+
 4、新增任务活动项
+
 
 任务活动
 
 在此声明,项目是个人开发项目,请勿用于商业.
+
 如需商业化,请与本人联系QQ:1047928853.
 
-本项目提供更新,欢迎留言至po2656233@qq.com or Issues me
+
+本项目提供更新,欢迎留言至
+po2656233@qq.com or Issues me
