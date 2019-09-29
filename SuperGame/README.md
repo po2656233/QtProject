@@ -1,6 +1,6 @@
 
 本工程是基于Qt5.10 开发的 游戏平台 客户端.
-protobuf 3.7.0版本 与之对应的服务端https://github.com/po2656233/go_project.git
+protobuf 3.7.0版本 与之对应的服务端 https://github.com/po2656233/go_project/tree/master/src
 
 1.登录流程:
 平台登录->大厅->房间(类型)列表->游戏列表->子游戏.
