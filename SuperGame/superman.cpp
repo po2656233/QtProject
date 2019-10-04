@@ -4,11 +4,11 @@
 #include "login/platform/rooms/loadingui.h"
 #include "login/platform/rooms/homeui.h"
 #include "login/platform/gameframeui.h"
-#include "login/platform/rooms/games/baccarat/baccaratui.h"
-#include "login/platform/rooms/games/mahjong/mahjongui.h"
-#include "login/platform/rooms/games/landlord/landlordui.h"
-#include "login/platform/rooms/games/cowcow/cowcowui.h"
-#include "login/platform/rooms/games/chineseChess/chinesechessui.h"
+#include "games/baccarat/baccaratui.h"
+#include "games/mahjong/mahjongui.h"
+#include "games/landlord/landlordui.h"
+#include "games/cowcow/cowcowui.h"
+#include "games/chineseChess/chinesechessui.h"
 
 #include "base/network/handlemsg.h"
 

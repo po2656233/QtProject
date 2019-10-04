@@ -34,24 +34,24 @@ SOURCES += \
     login/loginui.cpp \
     login/platform/gameframeui.cpp \
     superman.cpp \
-    login/platform/rooms/games/baccarat/baccaratui.cpp \
+    games/baccarat/baccaratui.cpp \
     base/baseui/uibase.cpp \
     base/baseui/gamemap.cpp \
-    login/platform/rooms/games/landlord/landlordui.cpp \
+    games/landlord/landlordui.cpp \
     base/baseui/uilabel.cpp \
-    login/platform/rooms/games/mahjong/mahjongui.cpp \
-    login/platform/rooms/games/cowcow/cowcowui.cpp \
-    login/platform/rooms/games/landlord/landlordlogic.cpp \
-    login/platform/rooms/games/baccarat/baccaratlogic.cpp \
+    games/mahjong/mahjongui.cpp \
+    games/cowcow/cowcowui.cpp \
+    games/landlord/landlordlogic.cpp \
+    games/baccarat/baccaratlogic.cpp \
     base/baseui/uibetarea.cpp \
     base/baseui/uitextscroll.cpp \
-    login/platform/rooms/games/chineseChess/chinesechessui.cpp \
-    login/platform/rooms/games/chineseChess/chinesechesslogic.cpp \
+    games/chineseChess/chinesechessui.cpp \
+    games/chineseChess/chinesechesslogic.cpp \
     base/baseui/uimeterprocessbar.cpp \
-    login/platform/rooms/games/landlord/playerui.cpp \
-    login/platform/rooms/games/toubao/toubaoui.cpp \
-    login/platform/rooms/games/cowcow/cowcowlogic.cpp \
-    login/platform/rooms/games/zhajinhua/zhajinhuaui.cpp \
+    games/landlord/playerui.cpp \
+    games/toubao/toubaoui.cpp \
+    games/cowcow/cowcowlogic.cpp \
+    games/zhajinhua/zhajinhuaui.cpp \
     base/gameunit.cpp \
     login/platform/rooms/homeui.cpp \
     login/platform/rooms/loadingui.cpp \
@@ -76,25 +76,25 @@ HEADERS += \
     login/platform/rooms/homeui.h \
     login/platform\rooms/loadingui.h \
     superman.h \
-    login/platform/rooms/games/baccarat/baccaratui.h \
+    games/baccarat/baccaratui.h \
     base/baseui/uibase.h \
     base/baseui/gamemap.h \
-    login/platform/rooms/games/landlord/landlordui.h \
+    games/landlord/landlordui.h \
     base/common.h \
     base/baseui/uilabel.h \
-    login/platform/rooms/games/mahjong/mahjongui.h \
-    login/platform/rooms/games/cowcow/cowcowui.h \
-    login/platform/rooms/games/landlord/landlordlogic.h \
-    login/platform/rooms/games/baccarat/baccaratlogic.h \
+    games/mahjong/mahjongui.h \
+    games/cowcow/cowcowui.h \
+    games/landlord/landlordlogic.h \
+    games/baccarat/baccaratlogic.h \
     base/baseui/uibetarea.h \
     base/baseui/uitextscroll.h \
-    login/platform/rooms/games/chineseChess/chinesechessui.h \
-    login/platform/rooms/games/chineseChess/chinesechesslogic.h \
+    games/chineseChess/chinesechessui.h \
+    games/chineseChess/chinesechesslogic.h \
     base/baseui/uimeterprocessbar.h \
-    login/platform/rooms/games/landlord/playerui.h \
-    login/platform/rooms/games/toubao/toubaoui.h \
-    login/platform/rooms/games/cowcow/cowcowlogic.h \
-    login/platform/rooms/games/zhajinhua/zhajinhuaui.h \
+    games/landlord/playerui.h \
+    games/toubao/toubaoui.h \
+    games/cowcow/cowcowlogic.h \
+    games/zhajinhua/zhajinhuaui.h \
     base/gameunit.h \
     base/baseui/uihandcard.h \
     base/baseui/uicard.h \
@@ -107,14 +107,14 @@ FORMS += \
     src/ui/gameframeui.ui \
     src/ui/homeui.ui \
     src/ui/loadingui.ui \
-    login/platform/rooms/games/baccarat/baccaratui.ui \
-    login/platform/rooms/games/landlord/landlordui.ui \
-    login/platform/rooms/games/mahjong/mahjong.ui \
-    login/platform/rooms/games/cowcow/cowcowui.ui \
-    login/platform/rooms/games/chineseChess/chinesechessui.ui \
-    login/platform/rooms/games/landlord/playerui.ui \
-    login/platform/rooms/games/toubao/toubaoui.ui \
-    login/platform/rooms/games/zhajinhua/zhajinhuaui.ui \
+    games/baccarat/baccaratui.ui \
+    games/landlord/landlordui.ui \
+    games/mahjong/mahjong.ui \
+    games/cowcow/cowcowui.ui \
+    games/chineseChess/chinesechessui.ui \
+    games/landlord/playerui.ui \
+    games/toubao/toubaoui.ui \
+    games/zhajinhua/zhajinhuaui.ui \
     src/ui/register.ui
 
 

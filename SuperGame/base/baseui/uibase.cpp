@@ -23,6 +23,7 @@ UIbase::UIbase(QWidget *parent) : QWidget(parent),m_mediaPlayer(nullptr),m_playl
     m_isShowFull = true;
     m_isCanBack = false;
     m_isCanExit = false;
+    m_isLeftPressDown = false;
 
 
     //m_rkeyMenu = nullptr;

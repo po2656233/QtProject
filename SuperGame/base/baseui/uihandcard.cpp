@@ -10,6 +10,7 @@ UIHandCard::UIHandCard(QWidget *parent) : QWidget(parent)
     m_y = 0;
     m_width = 20;
     m_height = 35;
+    m_curType = Type::Poker;
 }
 
 void UIHandCard::startPos(int x, int y)
@@ -66,7 +67,7 @@ void UIHandCard::addCard(int value, int space, int index, bool haveCenter, UIHan
     }
 
     card->setGeometry(m_x, m_y, m_width, m_height);
-    card->show();
+    update();
 
     // 添加到事件过滤器
     card->installEventFilter(this);
