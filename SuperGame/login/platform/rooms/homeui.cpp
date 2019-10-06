@@ -75,7 +75,7 @@ void HomeUI::updateGameList(go::GameList &list)
         GameName = GameName + level + lessscore + enterscore;
 
         // 添加游戏单元 到 沙盒
-        GameButton* gameItemBtn = new GameButton(GameName);
+        GameButton* gameItemBtn = new GameButton(GameName,this);
         gameItemBtn->setFixedSize(150,100);
         connect(gameItemBtn, &QPushButton::pressed,[=](){
 
@@ -112,7 +112,6 @@ void HomeUI::clearList()
         //setParent为NULL，防止删除之后界面不消失
         if(child->widget())
         {
-            child->widget()->setParent(NULL);
             child->widget()->deleteLater();
         }
         delete child;

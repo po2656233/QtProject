@@ -16,6 +16,7 @@
 #include <QHBoxLayout>
 #include <QPaintEvent>
 #include <QPainter>
+#include <QMessageBox>
 
 LandlordUI::LandlordUI(QWidget *parent) :
     GameMap(parent),
@@ -85,54 +86,14 @@ void LandlordUI::changeState(int state, const std::string &data)
 
     switch (state) {
     case SubGameStateStart:
-    {
-
-        resetTabel();
-        go::GameLandLordsBegins beginInfo;
-        if(beginInfo.IsInitialized() && beginInfo.ParseFromArray(data.c_str(), data.length()))
-        {
-
-            std::string strBottomCard = beginInfo.cardsbottom();
-            std::string strHandCard = beginInfo.cardshand();
-
-            //            for(int i = 0; i < strHandCard.length(); i++)
-            //            {
-            //                Poker* poker = new Poker;
-            //                poker->setCard(strHandCard.at(i));
-            //                m_layoutCards->addWidget(poker);
-            //            }
-            for(size_t i = 0; i < strBottomCard.length(); i++)
-            {
-//                UICard* poker = qobject_cast<UICard*> (ui->horizontalLayout_2->itemAt(i)->widget());
-//                if(poker)
-//                {
-//                    poker->clear();
-//                    poker->setCard(strBottomCard.at(i));
-
-//                }
-            }
-
-            for(size_t i = 0; i < strHandCard.length(); i++)
-            {
-                ui->handCards->addCard(strHandCard.at(i),30,i);
-//                UICard* poker = qobject_cast<UICard*> (ui->groupBox_player3->children().at(i));
-//                if(poker)
-//                {
-//                    poker->setCard(strHandCard.at(i));
-//                }
-            }
-            ui->handCards->show();
-            qDebug()<<"底牌:"<<strBottomCard.c_str();
-
-
-        }
-    }
+        doStateStart(data);
         this->startState();
         break;
     case SubGameStatePlaying:
-        this->startState();
+        doStatePlaying(data);
         break;
     case SubGameStateOver:
+        doStateOver(data);
         this->overState();
         break;
     default:
@@ -153,17 +114,33 @@ bool LandlordUI::gameHandle(int code, const std::string &data)
         {
             if (qint64(ready.userid()) == m_userID)
             {// 是否自己准备
-                readyState();
                 m_curState = SubGameFrameReady;
             }
         }
         return true;
     }
+    case SubGameFrameResult:
+    {
+        go::GameResult result;
+        if(result.IsInitialized() && result.ParseFromArray(data.c_str(), data.length()))
+        {
+            if (0 == result.flag())
+            {// 出牌成功
+                qDebug()<<"出牌成功";
+                ui->handCards->clearUp();
+            }else{
+                ui->handCards->doNot();
+                QMessageBox::warning(this,tr("提示"),tr("无效牌型"));
+                qDebug()<<"出牌失败";
+            }
+        }
 
-        break;
+        return true;
+    }
     default:
         break;
     }
+    qDebug()<<"无效---";
     return false;
 }
 
@@ -209,30 +186,58 @@ void LandlordUI::overState()
     ui->pushButton_Out->hide();
 }
 
-bool LandlordUI::eventFilter(QObject *watched, QEvent *event)
+bool LandlordUI::doStateStart(const string &data)
 {
-    QMouseEvent *mouseEvent=static_cast<QMouseEvent*>(event);
-    if(mouseEvent->type() == mouseEvent->MouseButtonPress ){
-        UICard* selectCard = qobject_cast<UICard*>(watched);
-        if(selectCard)
+    resetTabel();
+    go::GameLandLordsBegins beginInfo;
+    if(beginInfo.IsInitialized() && beginInfo.ParseFromArray(data.c_str(), data.length()))
+    {
+
+        std::string strBottomCard = beginInfo.cardsbottom();
+        std::string strHandCard = beginInfo.cardshand();
+        for(size_t i = 0; i < 17; i++)
         {
-            const QRect& rect = selectCard->geometry();
-            int state = selectCard->indent();
-            if(0 == state)
-            {
-                selectCard->setGeometry(rect.x(),rect.y()-20,rect.width(),rect.height());
-                selectCard->setIndent(1);
-            }
-            else if(1 == state)
-            {
-                selectCard->setGeometry(rect.x(),rect.y()+20,rect.width(),rect.height());
-                selectCard->setIndent(0);
-            }
-            qDebug()<<"选中了";
+            ui->handCards_player2->addCard(0);
+            ui->handCards_player3->addCard(0);
         }
+
+        for(size_t i = 0; i < strBottomCard.length(); i++)
+        {
+            ui->handCards_bottom->addCard(strBottomCard.at(i));
+        }
+
+        for(size_t i = 0; i < strHandCard.length(); i++)
+        {
+            ui->handCards->addCard(strHandCard.at(i),i);
+        }
+        return true;
     }
-    return QWidget::eventFilter(watched,event);
+    return false;
 }
+
+bool LandlordUI::doStatePlaying(const string &data)
+{
+    go::GameLandLordsOperate operateInfo;
+    if(operateInfo.IsInitialized() && operateInfo.ParseFromArray(data.c_str(), data.length()))
+    {
+
+        ui->handCards_out->clearCards();
+        int code = operateInfo.code(); //解析用
+        std::string strOutCard = operateInfo.cards();
+        for(size_t i = 0; i < strOutCard.length(); i++)
+        {
+            ui->handCards_out->addCard(strOutCard.at(i));
+        }
+        return true;
+    }
+    return false;
+}
+
+bool LandlordUI::doStateOver(const string &data)
+{
+
+}
+
 
 void LandlordUI::paintEvent(QPaintEvent *)
 {
@@ -244,81 +249,46 @@ void LandlordUI::paintEvent(QPaintEvent *)
 }
 
 
-
-
-
 void LandlordUI::initUI()
 {
-    UICard *pieces = nullptr;
-    int nCount = ui->groupBox_player3->children().count();
-    QObjectList objs = ui->groupBox_player3->children();
-
-    for(int i = 0; i<nCount; i++)
-    {
-        pieces = qobject_cast<UICard*>( objs.at(i) );
-        if(pieces){
-            pieces->installEventFilter(this);
-            pieces->setIndent(0);
-        }
-    }
-    ui->handCards->startPos(ui->groupBox_player1->x()+20, ui->groupBox_player1->y()+10);
     readyState();
-
-    //    QPixmap mypixmap;
-    //    ui->pushButton->text().clear();
-    //    mypixmap.load(":/img/landlord/item_chupai.png");
-    //    ui->pushButton->setMask(mypixmap.mask());
-    //    ui->pushButton->setFixedSize( mypixmap.width(), mypixmap.height() );
-    //    ui->pushButton->setIcon(mypixmap);
-    //    ui->pushButton->setIconSize(QSize(mypixmap.width(),mypixmap.height()));
-
 }
 
 void LandlordUI::resetTabel()
 {
     enterState();
-    UICard *pieces = nullptr;
-
-    int nCount = ui->groupBox_player3->children().count();
-    QObjectList objs = ui->groupBox_player3->children();
-
-
-
-    //重新整理手牌
-    int posX = 11;
-    int posY = 33;
-    for(int i = 0; i<nCount; i++)
-    {
-        pieces = qobject_cast<UICard*>( objs.at(i) );
-        if(pieces){
-            pieces->setIndent(0);
-            const QRect& rect = pieces->geometry();
-
-            pieces->setGeometry(posX, posY, rect.width(), rect.height());
-            posX += 55;
-            pieces->show(); // 需要重新show出来
-        }
-    }
-
-    //清空出牌区域
-    UICard *outCard = nullptr;
-    QLayoutItem* pItem = nullptr;
-//    for(int i = 0; i< ui->horizontalLayout_out->count(); i++)
-//    {
-//        pItem = ui->horizontalLayout_out->itemAt(i);
-//        if(pItem)
-//        {
-//            outCard = qobject_cast<UICard*>(pItem->widget());
-//            if(outCard)     outCard->hide();
-//        }
-//    }
+    ui->handCards_bottom->clearCards();
+    ui->handCards_bottom->setState(2);
+    ui->handCards_bottom->startPos(10,0);
+    ui->handCards_bottom->setCardWidth(60);
+    ui->handCards_bottom->setCardHeight(40);
 
 
-    //    QLayoutItem *child;
-    //    while ((child = m_layoutCards->takeAt(0)) != 0) {
-    //        child->widget()->deleteLater();
-    //        delete child;
-    //    }
+    ui->handCards_out->clearCards();
+    ui->handCards_out->setState(2);
+    ui->handCards_out->startPos(100,60);
+    ui->handCards_out->setCardWidth(80);
+    ui->handCards_out->setCardHeight(60);
+
+    ui->handCards_player2->clearCards();
+    ui->handCards_player2->setState(2);
+    ui->handCards_player2->startPos(0,10);
+    ui->handCards_player2->setCardWidth(40);
+    ui->handCards_player2->setCardHeight(30);
+    ui->handCards_player2->setDirect(UIHandCard::Direct::OverlayHalf);
+
+    ui->handCards_player3->clearCards();
+    ui->handCards_player3->setState(2);
+    ui->handCards_player3->startPos(0,10);
+    ui->handCards_player3->setCardWidth(40);
+    ui->handCards_player3->setCardHeight(30);
+    ui->handCards_player3->setDirect(UIHandCard::Direct::OverlayHalf);
+
+    ui->handCards->clearCards();
+    ui->handCards->startPos(100,60);
+    ui->handCards->setCardWidth(80);
+    ui->handCards->setCardHeight(60);
+    ui->handCards->setDirect(UIHandCard::Direct::OverlayHalf);
 }
 
 void LandlordUI::faPai()
@@ -329,48 +299,20 @@ void LandlordUI::faPai()
 
 void LandlordUI::on_pushButton_Hint_clicked()
 {
-
     HandleMsg::GetInstance()->ReqReady(m_userID, true);
-    if(m_curState == SubGameSenceFree)
-    {//发送准备
-        //S_GameKindID
-        HandleMsg::GetInstance()->ReqReady(m_userID, true);
-    }else{//提示
-
-    }
 }
 
 void LandlordUI::on_pushButton_NoOut_clicked()
 {
-
+    ui->handCards->doNot();
 }
 
 void LandlordUI::on_pushButton_Out_clicked()
 {
-
-
-
     //出牌消息
-    QString strOutCards = ui->handCards->outCards();
-    if(strOutCards.isEmpty())return;
-    HandleMsg::GetInstance()->ReqPlayCard(0,strOutCards.toStdString().c_str(),strOutCards.length(),NULL,0);
+    std::string strOutCards = ui->handCards->outCards();
+    if(strOutCards.empty())return;
 
-//    //牌值紧凑
-//    int posX = 11;
-//    for(int i = 0; i<nCount; i++)
-//    {
-//        pieces = qobject_cast<UICard*>(objs.at(i));
-//        if(pieces){
-//            if(0 == pieces->indent())
-//            {
-//                const QRect& rect = pieces->geometry();
-//                pieces->setGeometry(posX, rect.y(), rect.width(), rect.height());
-//                posX += 55;
-//            }
-//        }
-//    }
-
-
-
+    HandleMsg::GetInstance()->ReqPlayCard(0,strOutCards.c_str(), strOutCards.length(),NULL,0);
 
 }

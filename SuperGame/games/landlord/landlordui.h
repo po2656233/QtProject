@@ -26,8 +26,12 @@ protected:
     void startState();
     void overState();
 
-    // 拖拽界面
-    bool eventFilter(QObject *watched, QEvent *event);
+    //状态解析
+    bool doStateStart(const std::string& data);
+    bool doStatePlaying(const std::string& data);
+    bool doStateOver(const std::string& data);
+
+    //
     void paintEvent(QPaintEvent *event) ;
 
 private slots:

@@ -24,7 +24,7 @@
    <item row="0" column="0" rowspan="2">
     <widget class="QLabel" name="label_head">
      <property name="pixmap">
-      <pixmap resource="../../../../../src/element.qrc">:/img/wang.jpg</pixmap>
+      <pixmap resource="../../src/element.qrc">:/img/wang.jpg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -41,7 +41,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../../../src/element.qrc"/>
+  <include location="../../src/element.qrc"/>
  </resources>
  <connections/>
 </ui>
