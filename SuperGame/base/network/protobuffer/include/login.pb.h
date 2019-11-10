@@ -1290,11 +1290,11 @@ class UserInfo final :
   ::google::protobuf::uint32 level() const;
   void set_level(::google::protobuf::uint32 value);
 
-  // int64 Money = 8;
-  void clear_money();
-  static const int kMoneyFieldNumber = 8;
-  ::google::protobuf::int64 money() const;
-  void set_money(::google::protobuf::int64 value);
+  // int64 Gold = 8;
+  void clear_gold();
+  static const int kGoldFieldNumber = 8;
+  ::google::protobuf::int64 gold() const;
+  void set_gold(::google::protobuf::int64 value);
 
   // uint32 AgentID = 11;
   void clear_agentid();
@@ -1329,7 +1329,7 @@ class UserInfo final :
   ::google::protobuf::uint32 gender_;
   ::google::protobuf::uint32 age_;
   ::google::protobuf::uint32 level_;
-  ::google::protobuf::int64 money_;
+  ::google::protobuf::int64 gold_;
   ::google::protobuf::uint32 agentid_;
   ::google::protobuf::uint32 spreadergameid_;
   ::google::protobuf::uint32 clientaddr_;
@@ -3260,18 +3260,18 @@ inline void UserInfo::set_level(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:go.UserInfo.Level)
 }
 
-// int64 Money = 8;
-inline void UserInfo::clear_money() {
-  money_ = PROTOBUF_LONGLONG(0);
+// int64 Gold = 8;
+inline void UserInfo::clear_gold() {
+  gold_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 UserInfo::money() const {
-  // @@protoc_insertion_point(field_get:go.UserInfo.Money)
-  return money_;
+inline ::google::protobuf::int64 UserInfo::gold() const {
+  // @@protoc_insertion_point(field_get:go.UserInfo.Gold)
+  return gold_;
 }
-inline void UserInfo::set_money(::google::protobuf::int64 value) {
+inline void UserInfo::set_gold(::google::protobuf::int64 value) {
   
-  money_ = value;
-  // @@protoc_insertion_point(field_set:go.UserInfo.Money)
+  gold_ = value;
+  // @@protoc_insertion_point(field_set:go.UserInfo.Gold)
 }
 
 // string PassPortID = 9;

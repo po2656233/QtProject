@@ -1,12 +1,12 @@
-////////////////////////////////////////////////////
-/// °æÈ¨(@copyright):  ÖÇ»ÛÖĞ»ª(smart china)¼¼ÊõÓĞÏŞ¹«Ë¾
-/// ÎÄ¼ş(@interface):  Magic_Singleton.h
-/// °æ±¾(@version):    1.0
-/// ×÷Õß(@author):     Song
-/// ÈÕÆÚ(@date)  :
-/// ¹¦ÄÜ(@brief) £º    ÍòÄÜµ¥ÀıÀà
-/// Ä¿µÄ(@target)£º    ¿É°ÑÈÎºÎÀà°ü×°³ÉÏß³Ì°²È«µÄÈ«¾Öµ¥ÀıÀà£¬³ö¿ÚÄ¬ÈÏÖÇÄÜÖ¸Õë
-/// ±¸×¢(@attention): songshuda@vip.qq.com
+ï»¿////////////////////////////////////////////////////
+/// ç‰ˆæƒ(@copyright):  æ™ºæ…§ä¸­å(smart china)æŠ€æœ¯æœ‰é™å…¬å¸
+/// æ–‡ä»¶(@interface):  Magic_Singleton.h
+/// ç‰ˆæœ¬(@version):    1.0
+/// ä½œè€…(@author):     Song
+/// æ—¥æœŸ(@date)  :
+/// åŠŸèƒ½(@brief) ï¼š    ä¸‡èƒ½å•ä¾‹ç±»
+/// ç›®çš„(@target)ï¼š    å¯æŠŠä»»ä½•ç±»åŒ…è£…æˆçº¿ç¨‹å®‰å…¨çš„å…¨å±€å•ä¾‹ç±»ï¼Œå‡ºå£é»˜è®¤æ™ºèƒ½æŒ‡é’ˆ
+/// å¤‡æ³¨(@attention): songshuda@vip.qq.com
 ////////////////////////////////////////////////////
 
 
@@ -20,7 +20,7 @@ template<typename T>
 class Magic_Singleton {
 public:
 
-	//»ñÈ¡È«¾Öµ¥Àı¶ÔÏó
+	//è·å–å…¨å±€å•ä¾‹å¯¹è±¡
 	template<typename ...Args>
 	static std::shared_ptr<T> GetInstance(Args&&... args) {
 		if (!m_pSington) {
@@ -32,7 +32,7 @@ public:
 		return m_pSington;
 	}
 
-	//Ö÷¶¯Îö¹¹µ¥Àı¶ÔÏó£¨Ò»°ã²»ĞèÒªÖ÷¶¯Îö¹¹£¬³ı·ÇÌØÊâĞèÇó£©
+	//ä¸»åŠ¨ææ„å•ä¾‹å¯¹è±¡ï¼ˆä¸€èˆ¬ä¸éœ€è¦ä¸»åŠ¨ææ„ï¼Œé™¤éç‰¹æ®Šéœ€æ±‚ï¼‰
 	static void DesInstance() {
 		if (m_pSington) {
 			m_pSington.reset();
@@ -58,7 +58,7 @@ template<typename T>
 std::mutex Magic_Singleton<T>::m_Mutex;
 
 
-//µ÷ÓÃÊµÀı-->
+//è°ƒç”¨å®ä¾‹-->
 ////test.cpp
 //#include <iostream>
 //#include "Magic_Singleton.h"
@@ -78,7 +78,7 @@ std::mutex Magic_Singleton<T>::m_Mutex;
 //	string m_strData;
 //};
 //
-//auto main()->int { //µÈÍ¬ÓÚÈë¿Úº¯Êıint main()
+//auto main()->int { //ç­‰åŒäºå…¥å£å‡½æ•°int main()
 //	auto pClass = Magic_Singleton<MyClass>::GetInstance("create");
 //
 //	Magic_Singleton<MyClass>::DesInstance();

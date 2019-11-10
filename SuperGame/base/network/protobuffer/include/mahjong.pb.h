@@ -182,20 +182,14 @@ class GameMahjongEnter final :
 
   // accessors -------------------------------------------------------
 
-  // .go.UserList Players = 3;
-  bool has_players() const;
-  void clear_players();
-  static const int kPlayersFieldNumber = 3;
-  const ::go::UserList& players() const;
-  ::go::UserList* release_players();
-  ::go::UserList* mutable_players();
-  void set_allocated_players(::go::UserList* players);
-
-  // uint64 UserID = 1;
-  void clear_userid();
-  static const int kUserIDFieldNumber = 1;
-  ::google::protobuf::uint64 userid() const;
-  void set_userid(::google::protobuf::uint64 value);
+  // .go.PlayerInfo userInfo = 1;
+  bool has_userinfo() const;
+  void clear_userinfo();
+  static const int kUserInfoFieldNumber = 1;
+  const ::go::PlayerInfo& userinfo() const;
+  ::go::PlayerInfo* release_userinfo();
+  ::go::PlayerInfo* mutable_userinfo();
+  void set_allocated_userinfo(::go::PlayerInfo* userinfo);
 
   // int64 TimeStamp = 2;
   void clear_timestamp();
@@ -203,9 +197,9 @@ class GameMahjongEnter final :
   ::google::protobuf::int64 timestamp() const;
   void set_timestamp(::google::protobuf::int64 value);
 
-  // uint32 FreeTime = 4;
+  // uint32 FreeTime = 3;
   void clear_freetime();
-  static const int kFreeTimeFieldNumber = 4;
+  static const int kFreeTimeFieldNumber = 3;
   ::google::protobuf::uint32 freetime() const;
   void set_freetime(::google::protobuf::uint32 value);
 
@@ -214,8 +208,7 @@ class GameMahjongEnter final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::go::UserList* players_;
-  ::google::protobuf::uint64 userid_;
+  ::go::PlayerInfo* userinfo_;
   ::google::protobuf::int64 timestamp_;
   ::google::protobuf::uint32 freetime_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1042,18 +1035,49 @@ class GameMahjongCheckout final :
 #endif  // __GNUC__
 // GameMahjongEnter
 
-// uint64 UserID = 1;
-inline void GameMahjongEnter::clear_userid() {
-  userid_ = PROTOBUF_ULONGLONG(0);
+// .go.PlayerInfo userInfo = 1;
+inline bool GameMahjongEnter::has_userinfo() const {
+  return this != internal_default_instance() && userinfo_ != nullptr;
 }
-inline ::google::protobuf::uint64 GameMahjongEnter::userid() const {
-  // @@protoc_insertion_point(field_get:go.GameMahjongEnter.UserID)
-  return userid_;
+inline const ::go::PlayerInfo& GameMahjongEnter::userinfo() const {
+  const ::go::PlayerInfo* p = userinfo_;
+  // @@protoc_insertion_point(field_get:go.GameMahjongEnter.userInfo)
+  return p != nullptr ? *p : *reinterpret_cast<const ::go::PlayerInfo*>(
+      &::go::_PlayerInfo_default_instance_);
 }
-inline void GameMahjongEnter::set_userid(::google::protobuf::uint64 value) {
+inline ::go::PlayerInfo* GameMahjongEnter::release_userinfo() {
+  // @@protoc_insertion_point(field_release:go.GameMahjongEnter.userInfo)
   
-  userid_ = value;
-  // @@protoc_insertion_point(field_set:go.GameMahjongEnter.UserID)
+  ::go::PlayerInfo* temp = userinfo_;
+  userinfo_ = nullptr;
+  return temp;
+}
+inline ::go::PlayerInfo* GameMahjongEnter::mutable_userinfo() {
+  
+  if (userinfo_ == nullptr) {
+    auto* p = CreateMaybeMessage<::go::PlayerInfo>(GetArenaNoVirtual());
+    userinfo_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:go.GameMahjongEnter.userInfo)
+  return userinfo_;
+}
+inline void GameMahjongEnter::set_allocated_userinfo(::go::PlayerInfo* userinfo) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(userinfo_);
+  }
+  if (userinfo) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      userinfo = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, userinfo, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  userinfo_ = userinfo;
+  // @@protoc_insertion_point(field_set_allocated:go.GameMahjongEnter.userInfo)
 }
 
 // int64 TimeStamp = 2;
@@ -1070,52 +1094,7 @@ inline void GameMahjongEnter::set_timestamp(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:go.GameMahjongEnter.TimeStamp)
 }
 
-// .go.UserList Players = 3;
-inline bool GameMahjongEnter::has_players() const {
-  return this != internal_default_instance() && players_ != nullptr;
-}
-inline const ::go::UserList& GameMahjongEnter::players() const {
-  const ::go::UserList* p = players_;
-  // @@protoc_insertion_point(field_get:go.GameMahjongEnter.Players)
-  return p != nullptr ? *p : *reinterpret_cast<const ::go::UserList*>(
-      &::go::_UserList_default_instance_);
-}
-inline ::go::UserList* GameMahjongEnter::release_players() {
-  // @@protoc_insertion_point(field_release:go.GameMahjongEnter.Players)
-  
-  ::go::UserList* temp = players_;
-  players_ = nullptr;
-  return temp;
-}
-inline ::go::UserList* GameMahjongEnter::mutable_players() {
-  
-  if (players_ == nullptr) {
-    auto* p = CreateMaybeMessage<::go::UserList>(GetArenaNoVirtual());
-    players_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:go.GameMahjongEnter.Players)
-  return players_;
-}
-inline void GameMahjongEnter::set_allocated_players(::go::UserList* players) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(players_);
-  }
-  if (players) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      players = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, players, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  players_ = players;
-  // @@protoc_insertion_point(field_set_allocated:go.GameMahjongEnter.Players)
-}
-
-// uint32 FreeTime = 4;
+// uint32 FreeTime = 3;
 inline void GameMahjongEnter::clear_freetime() {
   freetime_ = 0u;
 }

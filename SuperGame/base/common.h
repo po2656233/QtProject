@@ -123,7 +123,7 @@ inline bool isBigEndian() {
 
 
 // 序列化 -->配合服务端规则  len+id+data   返回字节大小 和 数据
-inline char * marshal(int len, int id, void * data, size_t & size)
+inline char* marshal(int len, int id, void * data, size_t & size)
 {
     if (nullptr == data || 0 == len || _MAX_MSGSIZE < len) return nullptr;
 
@@ -157,8 +157,8 @@ inline char * marshal(int len, int id, void * data, size_t & size)
     return szData;
 }
 
-// 反序列 	len+id+data   返回字节大小 和 数据
-inline char * unmarshal(const void * data, size_t len, size_t & size)
+// 反序列 	len+id+data   返回id 字节大小 和 数据
+inline char* unmarshal(const void * data, size_t len, int& id, size_t & size)
 {
     if (nullptr == data || 0 == len || _MAX_MSGSIZE < len) return nullptr;
 
@@ -169,16 +169,15 @@ inline char * unmarshal(const void * data, size_t len, size_t & size)
 
     // ?????????len
     size_t nLen = 0;
-    //int nID = 0;
     if (isBigEndian())
     {//????
         nLen =  (szData[1] & 0xff) << 8| (szData[0] & 0xff) << 0;
-        // nID = (szData[3] & 0xff) << 8| (szData[2] & 0xff) << 0;;
+        id = (szData[3] & 0xff) << 8| (szData[2] & 0xff) << 0;;
     }
     else
     {//С??
         nLen =  (szData[0] & 0xff) << 8| (szData[1] & 0xff) << 0;
-        //nID = (szData[2] & 0xff) << 8| (szData[3] & 0xff) << 0;;
+        id = (szData[2] & 0xff) << 8| (szData[3] & 0xff) << 0;;
     }
     if (_MAX_MSGSIZE < nLen || nLen <= 0)return nullptr;
     size = nLen - sizeof(unsigned short);
@@ -191,6 +190,9 @@ inline char * unmarshal(const void * data, size_t len, size_t & size)
     memcpy(szData, szData + 2 * sizeof(unsigned short), size);
     return szData;
 }
+
+
+
 
 }
 

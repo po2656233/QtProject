@@ -33,7 +33,7 @@ GameFrameUI::~GameFrameUI()
 void GameFrameUI::updateUserInfo(const go::UserInfo &userInfo)
 {
     ui->labelName->setText( tr("Name:")+userInfo.accounts().c_str() );
-    ui->labelGold->setText( tr("Gold:\n") + QString::number(userInfo.money()/100,'f',2) );
+    ui->labelGold->setText( tr("Gold:\n") + QString::number(userInfo.gold()/100,'f',2) );
 }
 
 void GameFrameUI::updateRoomInfo(const go::RoomInfo &roomInfo)

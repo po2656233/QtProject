@@ -211,6 +211,20 @@ class PlayerInfo final :
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
+  // string Account = 7;
+  void clear_account();
+  static const int kAccountFieldNumber = 7;
+  const ::std::string& account() const;
+  void set_account(const ::std::string& value);
+  #if LANG_CXX11
+  void set_account(::std::string&& value);
+  #endif
+  void set_account(const char* value);
+  void set_account(const char* value, size_t size);
+  ::std::string* mutable_account();
+  ::std::string* release_account();
+  void set_allocated_account(::std::string* account);
+
   // uint64 UserID = 1;
   void clear_userid();
   static const int kUserIDFieldNumber = 1;
@@ -241,17 +255,46 @@ class PlayerInfo final :
   ::google::protobuf::int32 viplevel() const;
   void set_viplevel(::google::protobuf::int32 value);
 
+  // int32 Sate = 8;
+  void clear_sate();
+  static const int kSateFieldNumber = 8;
+  ::google::protobuf::int32 sate() const;
+  void set_sate(::google::protobuf::int32 value);
+
+  // uint32 PlatformID = 9;
+  void clear_platformid();
+  static const int kPlatformIDFieldNumber = 9;
+  ::google::protobuf::uint32 platformid() const;
+  void set_platformid(::google::protobuf::uint32 value);
+
+  // uint32 RoomNum = 10;
+  void clear_roomnum();
+  static const int kRoomNumFieldNumber = 10;
+  ::google::protobuf::uint32 roomnum() const;
+  void set_roomnum(::google::protobuf::uint32 value);
+
+  // uint32 GameID = 11;
+  void clear_gameid();
+  static const int kGameIDFieldNumber = 11;
+  ::google::protobuf::uint32 gameid() const;
+  void set_gameid(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:go.PlayerInfo)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr account_;
   ::google::protobuf::uint64 userid_;
   ::google::protobuf::int32 age_;
   ::google::protobuf::int32 sex_;
   ::google::protobuf::int64 gold_;
   ::google::protobuf::int32 viplevel_;
+  ::google::protobuf::int32 sate_;
+  ::google::protobuf::uint32 platformid_;
+  ::google::protobuf::uint32 roomnum_;
+  ::google::protobuf::uint32 gameid_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_gamecomm_2eproto;
 };
@@ -1637,6 +1680,115 @@ inline void PlayerInfo::set_viplevel(::google::protobuf::int32 value) {
   
   viplevel_ = value;
   // @@protoc_insertion_point(field_set:go.PlayerInfo.VipLevel)
+}
+
+// string Account = 7;
+inline void PlayerInfo::clear_account() {
+  account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PlayerInfo::account() const {
+  // @@protoc_insertion_point(field_get:go.PlayerInfo.Account)
+  return account_.GetNoArena();
+}
+inline void PlayerInfo::set_account(const ::std::string& value) {
+  
+  account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:go.PlayerInfo.Account)
+}
+#if LANG_CXX11
+inline void PlayerInfo::set_account(::std::string&& value) {
+  
+  account_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:go.PlayerInfo.Account)
+}
+#endif
+inline void PlayerInfo::set_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:go.PlayerInfo.Account)
+}
+inline void PlayerInfo::set_account(const char* value, size_t size) {
+  
+  account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:go.PlayerInfo.Account)
+}
+inline ::std::string* PlayerInfo::mutable_account() {
+  
+  // @@protoc_insertion_point(field_mutable:go.PlayerInfo.Account)
+  return account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PlayerInfo::release_account() {
+  // @@protoc_insertion_point(field_release:go.PlayerInfo.Account)
+  
+  return account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PlayerInfo::set_allocated_account(::std::string* account) {
+  if (account != nullptr) {
+    
+  } else {
+    
+  }
+  account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), account);
+  // @@protoc_insertion_point(field_set_allocated:go.PlayerInfo.Account)
+}
+
+// int32 Sate = 8;
+inline void PlayerInfo::clear_sate() {
+  sate_ = 0;
+}
+inline ::google::protobuf::int32 PlayerInfo::sate() const {
+  // @@protoc_insertion_point(field_get:go.PlayerInfo.Sate)
+  return sate_;
+}
+inline void PlayerInfo::set_sate(::google::protobuf::int32 value) {
+  
+  sate_ = value;
+  // @@protoc_insertion_point(field_set:go.PlayerInfo.Sate)
+}
+
+// uint32 PlatformID = 9;
+inline void PlayerInfo::clear_platformid() {
+  platformid_ = 0u;
+}
+inline ::google::protobuf::uint32 PlayerInfo::platformid() const {
+  // @@protoc_insertion_point(field_get:go.PlayerInfo.PlatformID)
+  return platformid_;
+}
+inline void PlayerInfo::set_platformid(::google::protobuf::uint32 value) {
+  
+  platformid_ = value;
+  // @@protoc_insertion_point(field_set:go.PlayerInfo.PlatformID)
+}
+
+// uint32 RoomNum = 10;
+inline void PlayerInfo::clear_roomnum() {
+  roomnum_ = 0u;
+}
+inline ::google::protobuf::uint32 PlayerInfo::roomnum() const {
+  // @@protoc_insertion_point(field_get:go.PlayerInfo.RoomNum)
+  return roomnum_;
+}
+inline void PlayerInfo::set_roomnum(::google::protobuf::uint32 value) {
+  
+  roomnum_ = value;
+  // @@protoc_insertion_point(field_set:go.PlayerInfo.RoomNum)
+}
+
+// uint32 GameID = 11;
+inline void PlayerInfo::clear_gameid() {
+  gameid_ = 0u;
+}
+inline ::google::protobuf::uint32 PlayerInfo::gameid() const {
+  // @@protoc_insertion_point(field_get:go.PlayerInfo.GameID)
+  return gameid_;
+}
+inline void PlayerInfo::set_gameid(::google::protobuf::uint32 value) {
+  
+  gameid_ = value;
+  // @@protoc_insertion_point(field_set:go.PlayerInfo.GameID)
 }
 
 // -------------------------------------------------------------------

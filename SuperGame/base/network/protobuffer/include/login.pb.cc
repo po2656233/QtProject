@@ -390,7 +390,7 @@ const ::google::protobuf::uint32 TableStruct_login_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::go::UserInfo, gender_),
   PROTOBUF_FIELD_OFFSET(::go::UserInfo, age_),
   PROTOBUF_FIELD_OFFSET(::go::UserInfo, level_),
-  PROTOBUF_FIELD_OFFSET(::go::UserInfo, money_),
+  PROTOBUF_FIELD_OFFSET(::go::UserInfo, gold_),
   PROTOBUF_FIELD_OFFSET(::go::UserInfo, passportid_),
   PROTOBUF_FIELD_OFFSET(::go::UserInfo, compellation_),
   PROTOBUF_FIELD_OFFSET(::go::UserInfo, agentid_),
@@ -506,30 +506,30 @@ const char descriptor_table_protodef_login_2eproto[] =
   "\n\006TaskID\030\001 \001(\r\022\r\n\005Twice\030\002 \001(\r\022\r\n\005Hints\030\003"
   " \001(\t\"&\n\010TaskList\022\032\n\004Task\030\001 \003(\0132\014.go.Task"
   "Item\"\'\n\010GameList\022\033\n\005Items\030\001 \003(\0132\014.go.Gam"
-  "eItem\"\203\002\n\010UserInfo\022\014\n\004Name\030\001 \001(\t\022\020\n\010Acco"
+  "eItem\"\202\002\n\010UserInfo\022\014\n\004Name\030\001 \001(\t\022\020\n\010Acco"
   "unts\030\002 \001(\t\022\020\n\010Password\030\003 \001(\t\022\016\n\006FaceID\030\004"
   " \001(\r\022\016\n\006Gender\030\005 \001(\r\022\013\n\003Age\030\006 \001(\r\022\r\n\005Lev"
-  "el\030\007 \001(\r\022\r\n\005Money\030\010 \001(\003\022\022\n\nPassPortID\030\t "
-  "\001(\t\022\024\n\014Compellation\030\n \001(\t\022\017\n\007AgentID\030\013 \001"
-  "(\r\022\026\n\016SpreaderGameID\030\014 \001(\r\022\022\n\nClientAddr"
-  "\030\r \001(\r\022\023\n\013MachineCode\030\016 \001(\t\"[\n\010RoomInfo\022"
-  "\017\n\007RoomNum\030\001 \001(\r\022\017\n\007RoomKey\030\002 \001(\t\022\020\n\010Roo"
-  "mName\030\003 \001(\t\022\033\n\005Games\030\004 \001(\0132\014.go.GameList"
-  "\"p\n\014GameBaseInfo\022\014\n\004Type\030\001 \001(\r\022\016\n\006KindID"
-  "\030\002 \001(\r\022\r\n\005Level\030\003 \001(\r\022\014\n\004Name\030\004 \001(\t\022\022\n\nE"
-  "nterScore\030\005 \001(\r\022\021\n\tLessScore\030\006 \001(\r\"6\n\010Ga"
-  "meItem\022\n\n\002ID\030\001 \001(\r\022\036\n\004Info\030\002 \001(\0132\020.go.Ga"
-  "meBaseInfo\"j\n\nMasterInfo\022\036\n\010UserInfo\030\001 \001"
-  "(\0132\014.go.UserInfo\022\037\n\tRoomsInfo\030\002 \003(\0132\014.go"
-  ".RoomInfo\022\033\n\005Tasks\030\003 \001(\0132\014.go.TaskList\"0"
-  "\n\014ReqEnterRoom\022\017\n\007RoomNum\030\001 \001(\r\022\017\n\007RoomK"
-  "ey\030\002 \001(\t\"\036\n\014ReqEnterGame\022\016\n\006GameID\030\001 \001(\r"
-  "\"\035\n\013ReqExitGame\022\016\n\006GameID\030\001 \001(\rb\006proto3"
+  "el\030\007 \001(\r\022\014\n\004Gold\030\010 \001(\003\022\022\n\nPassPortID\030\t \001"
+  "(\t\022\024\n\014Compellation\030\n \001(\t\022\017\n\007AgentID\030\013 \001("
+  "\r\022\026\n\016SpreaderGameID\030\014 \001(\r\022\022\n\nClientAddr\030"
+  "\r \001(\r\022\023\n\013MachineCode\030\016 \001(\t\"[\n\010RoomInfo\022\017"
+  "\n\007RoomNum\030\001 \001(\r\022\017\n\007RoomKey\030\002 \001(\t\022\020\n\010Room"
+  "Name\030\003 \001(\t\022\033\n\005Games\030\004 \001(\0132\014.go.GameList\""
+  "p\n\014GameBaseInfo\022\014\n\004Type\030\001 \001(\r\022\016\n\006KindID\030"
+  "\002 \001(\r\022\r\n\005Level\030\003 \001(\r\022\014\n\004Name\030\004 \001(\t\022\022\n\nEn"
+  "terScore\030\005 \001(\r\022\021\n\tLessScore\030\006 \001(\r\"6\n\010Gam"
+  "eItem\022\n\n\002ID\030\001 \001(\r\022\036\n\004Info\030\002 \001(\0132\020.go.Gam"
+  "eBaseInfo\"j\n\nMasterInfo\022\036\n\010UserInfo\030\001 \001("
+  "\0132\014.go.UserInfo\022\037\n\tRoomsInfo\030\002 \003(\0132\014.go."
+  "RoomInfo\022\033\n\005Tasks\030\003 \001(\0132\014.go.TaskList\"0\n"
+  "\014ReqEnterRoom\022\017\n\007RoomNum\030\001 \001(\r\022\017\n\007RoomKe"
+  "y\030\002 \001(\t\"\036\n\014ReqEnterGame\022\016\n\006GameID\030\001 \001(\r\""
+  "\035\n\013ReqExitGame\022\016\n\006GameID\030\001 \001(\rb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_login_2eproto = {
   false, InitDefaults_login_2eproto, 
   descriptor_table_protodef_login_2eproto,
-  "login.proto", &assign_descriptors_table_login_2eproto, 1199,
+  "login.proto", &assign_descriptors_table_login_2eproto, 1198,
 };
 
 void AddDescriptors_login_2eproto() {
@@ -3298,7 +3298,7 @@ const int UserInfo::kFaceIDFieldNumber;
 const int UserInfo::kGenderFieldNumber;
 const int UserInfo::kAgeFieldNumber;
 const int UserInfo::kLevelFieldNumber;
-const int UserInfo::kMoneyFieldNumber;
+const int UserInfo::kGoldFieldNumber;
 const int UserInfo::kPassPortIDFieldNumber;
 const int UserInfo::kCompellationFieldNumber;
 const int UserInfo::kAgentIDFieldNumber;
@@ -3490,10 +3490,10 @@ const char* UserInfo::_InternalParse(const char* begin, const char* end, void* o
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int64 Money = 8;
+      // int64 Gold = 8;
       case 8: {
         if (static_cast<::google::protobuf::uint8>(tag) != 64) goto handle_unusual;
-        msg->set_money(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_gold(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -3697,13 +3697,13 @@ bool UserInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 Money = 8;
+      // int64 Gold = 8;
       case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (64 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &money_)));
+                 input, &gold_)));
         } else {
           goto handle_unusual;
         }
@@ -3871,9 +3871,9 @@ void UserInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->level(), output);
   }
 
-  // int64 Money = 8;
-  if (this->money() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(8, this->money(), output);
+  // int64 Gold = 8;
+  if (this->gold() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(8, this->gold(), output);
   }
 
   // string PassPortID = 9;
@@ -3987,9 +3987,9 @@ void UserInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->level(), target);
   }
 
-  // int64 Money = 8;
-  if (this->money() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(8, this->money(), target);
+  // int64 Gold = 8;
+  if (this->gold() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(8, this->gold(), target);
   }
 
   // string PassPortID = 9;
@@ -4131,11 +4131,11 @@ size_t UserInfo::ByteSizeLong() const {
         this->level());
   }
 
-  // int64 Money = 8;
-  if (this->money() != 0) {
+  // int64 Gold = 8;
+  if (this->gold() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->money());
+        this->gold());
   }
 
   // uint32 AgentID = 11;
@@ -4222,8 +4222,8 @@ void UserInfo::MergeFrom(const UserInfo& from) {
   if (from.level() != 0) {
     set_level(from.level());
   }
-  if (from.money() != 0) {
-    set_money(from.money());
+  if (from.gold() != 0) {
+    set_gold(from.gold());
   }
   if (from.agentid() != 0) {
     set_agentid(from.agentid());
@@ -4277,7 +4277,7 @@ void UserInfo::InternalSwap(UserInfo* other) {
   swap(gender_, other->gender_);
   swap(age_, other->age_);
   swap(level_, other->level_);
-  swap(money_, other->money_);
+  swap(gold_, other->gold_);
   swap(agentid_, other->agentid_);
   swap(spreadergameid_, other->spreadergameid_);
   swap(clientaddr_, other->clientaddr_);

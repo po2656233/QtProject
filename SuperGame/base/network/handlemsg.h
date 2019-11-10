@@ -27,9 +27,10 @@ public:
 
     static HandleMsg* GetInstance();                                // 提供单例
 
-    inline int GetTheme()const{ return m_theme; }
-    inline int GetCode()const { return m_state; }                   //  状态码
-    inline std::string GetUnpack()const{ return m_unpack; }                //  是否需要拆包
+    //[注:数据解析后,获取才有效]
+    inline int GetMID()const{ return m_theme; }                     //  母命令
+    inline int GetSID()const { return m_state; }                    //  子命令
+    inline std::string GetUnpack()const{ return m_unpack; }         //  数据包
 
 
     bool connectTo(const QString& strIP, int nPort, int msecs = 30000);   // 连接外网
@@ -39,7 +40,7 @@ public:
     void addMsg(char *data, size_t size);                           // 刚连接时发送
     void addMsg(QString& strData);
     void sendAllMsg();                                              // 统一发送数据(暂时未优化为分包处理)
-    std::string parseData(const char* data, size_t size);			// 数据解析
+    std::string parseData(const char *data, size_t size, size_t& realSize); // 数据解析
 
     // 请求登录
     bool ReqLogin(const char* account, const char* password, const char* securitycode, const char* machinecode);
@@ -67,6 +68,7 @@ public:
 
     void close();
 
+
 signals:
     void recvSig(QByteArray data);
     void disconnectSig();
@@ -83,16 +85,20 @@ private slots:
 private:
     void registerProtoMsg();									// ******务必与leaf服务器注册的一致
     void registerMsg(const char* clsName);
+    void sortoutMsg(int msgID);
+    std::string getMsgName(int msgID);
 
-    void baccaratRegister();
-    void mahjongRegister();
-    void landLordsRegister();
+//    void baccaratRegister();
+//    void mahjongRegister();
+//    void landLordsRegister();
 
 private:
 
     //网络信息
     int m_theme;                                                // 主题码  == mainID
     int m_state;												// 状态码  == subID
+
+
     int m_nPort;                                                // 端口号
     std::string  m_strIP;                                       // IP地址
     std::string  m_unpack;                                      // 是否需要重复拆包

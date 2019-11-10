@@ -251,6 +251,11 @@ const ::google::protobuf::uint32 TableStruct_gamecomm_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, sex_),
   PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, gold_),
   PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, viplevel_),
+  PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, account_),
+  PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, sate_),
+  PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, platformid_),
+  PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, roomnum_),
+  PROTOBUF_FIELD_OFFSET(::go::PlayerInfo, gameid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::go::UserList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -327,16 +332,16 @@ const ::google::protobuf::uint32 TableStruct_gamecomm_2eproto::offsets[] PROTOBU
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::go::PlayerInfo)},
-  { 11, -1, sizeof(::go::UserList)},
-  { 17, -1, sizeof(::go::PlayerRecord)},
-  { 27, -1, sizeof(::go::GameReady)},
-  { 34, -1, sizeof(::go::GameBet)},
-  { 41, -1, sizeof(::go::GameBetResult)},
-  { 51, -1, sizeof(::go::GameHost)},
-  { 57, -1, sizeof(::go::GameSuperHost)},
-  { 63, -1, sizeof(::go::GameRecord)},
-  { 71, -1, sizeof(::go::GameRecordList)},
-  { 77, -1, sizeof(::go::GameResult)},
+  { 16, -1, sizeof(::go::UserList)},
+  { 22, -1, sizeof(::go::PlayerRecord)},
+  { 32, -1, sizeof(::go::GameReady)},
+  { 39, -1, sizeof(::go::GameBet)},
+  { 46, -1, sizeof(::go::GameBetResult)},
+  { 56, -1, sizeof(::go::GameHost)},
+  { 62, -1, sizeof(::go::GameSuperHost)},
+  { 68, -1, sizeof(::go::GameRecord)},
+  { 76, -1, sizeof(::go::GameRecordList)},
+  { 82, -1, sizeof(::go::GameResult)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -360,29 +365,31 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_gamecomm_2eproto[] =
-  "\n\016gamecomm.proto\022\002go\"d\n\nPlayerInfo\022\016\n\006Us"
-  "erID\030\001 \001(\004\022\014\n\004Name\030\002 \001(\t\022\013\n\003Age\030\003 \001(\005\022\013\n"
-  "\003Sex\030\004 \001(\005\022\014\n\004Gold\030\005 \001(\003\022\020\n\010VipLevel\030\006 \001"
-  "(\005\",\n\010UserList\022 \n\010AllInfos\030\001 \003(\0132\016.go.Pl"
-  "ayerInfo\"n\n\014PlayerRecord\022\034\n\004User\030\001 \001(\0132\016"
-  ".go.PlayerInfo\022\r\n\005Twice\030\002 \001(\005\022\017\n\007Ranking"
-  "\030\003 \001(\005\022\020\n\010Bankroll\030\004 \001(\005\022\016\n\006WinLos\030\005 \001(\003"
-  "\",\n\tGameReady\022\016\n\006UserID\030\001 \001(\004\022\017\n\007IsReady"
-  "\030\002 \001(\010\",\n\007GameBet\022\017\n\007BetArea\030\001 \001(\005\022\020\n\010Be"
-  "tScore\030\002 \001(\003\"`\n\rGameBetResult\022\016\n\006UserID\030"
-  "\001 \001(\004\022\r\n\005State\030\002 \001(\005\022\r\n\005Hints\030\003 \001(\t\022\017\n\007B"
-  "etArea\030\004 \001(\005\022\020\n\010BetScore\030\005 \001(\003\"\032\n\010GameHo"
-  "st\022\016\n\006IsWant\030\001 \001(\010\"\037\n\rGameSuperHost\022\016\n\006I"
-  "sWant\030\001 \001(\010\"7\n\nGameRecord\022\014\n\004Pork\030\001 \001(\014\022"
-  "\014\n\004Type\030\002 \001(\005\022\r\n\005isWon\030\003 \001(\010\".\n\016GameReco"
-  "rdList\022\034\n\004list\030\001 \003(\0132\016.go.GameRecord\"*\n\n"
-  "GameResult\022\014\n\004Flag\030\001 \001(\005\022\016\n\006Reason\030\002 \001(\014"
-  "b\006proto3"
+  "\n\016gamecomm.proto\022\002go\"\270\001\n\nPlayerInfo\022\016\n\006U"
+  "serID\030\001 \001(\004\022\014\n\004Name\030\002 \001(\t\022\013\n\003Age\030\003 \001(\005\022\013"
+  "\n\003Sex\030\004 \001(\005\022\014\n\004Gold\030\005 \001(\003\022\020\n\010VipLevel\030\006 "
+  "\001(\005\022\017\n\007Account\030\007 \001(\t\022\014\n\004Sate\030\010 \001(\005\022\022\n\nPl"
+  "atformID\030\t \001(\r\022\017\n\007RoomNum\030\n \001(\r\022\016\n\006GameI"
+  "D\030\013 \001(\r\",\n\010UserList\022 \n\010AllInfos\030\001 \003(\0132\016."
+  "go.PlayerInfo\"n\n\014PlayerRecord\022\034\n\004User\030\001 "
+  "\001(\0132\016.go.PlayerInfo\022\r\n\005Twice\030\002 \001(\005\022\017\n\007Ra"
+  "nking\030\003 \001(\005\022\020\n\010Bankroll\030\004 \001(\005\022\016\n\006WinLos\030"
+  "\005 \001(\003\",\n\tGameReady\022\016\n\006UserID\030\001 \001(\004\022\017\n\007Is"
+  "Ready\030\002 \001(\010\",\n\007GameBet\022\017\n\007BetArea\030\001 \001(\005\022"
+  "\020\n\010BetScore\030\002 \001(\003\"`\n\rGameBetResult\022\016\n\006Us"
+  "erID\030\001 \001(\004\022\r\n\005State\030\002 \001(\005\022\r\n\005Hints\030\003 \001(\t"
+  "\022\017\n\007BetArea\030\004 \001(\005\022\020\n\010BetScore\030\005 \001(\003\"\032\n\010G"
+  "ameHost\022\016\n\006IsWant\030\001 \001(\010\"\037\n\rGameSuperHost"
+  "\022\016\n\006IsWant\030\001 \001(\010\"7\n\nGameRecord\022\014\n\004Pork\030\001"
+  " \001(\014\022\014\n\004Type\030\002 \001(\005\022\r\n\005isWon\030\003 \001(\010\".\n\016Gam"
+  "eRecordList\022\034\n\004list\030\001 \003(\0132\016.go.GameRecor"
+  "d\"*\n\nGameResult\022\014\n\004Flag\030\001 \001(\005\022\016\n\006Reason\030"
+  "\002 \001(\014b\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_gamecomm_2eproto = {
   false, InitDefaults_gamecomm_2eproto, 
   descriptor_table_protodef_gamecomm_2eproto,
-  "gamecomm.proto", &assign_descriptors_table_gamecomm_2eproto, 688,
+  "gamecomm.proto", &assign_descriptors_table_gamecomm_2eproto, 773,
 };
 
 void AddDescriptors_gamecomm_2eproto() {
@@ -411,6 +418,11 @@ const int PlayerInfo::kAgeFieldNumber;
 const int PlayerInfo::kSexFieldNumber;
 const int PlayerInfo::kGoldFieldNumber;
 const int PlayerInfo::kVipLevelFieldNumber;
+const int PlayerInfo::kAccountFieldNumber;
+const int PlayerInfo::kSateFieldNumber;
+const int PlayerInfo::kPlatformIDFieldNumber;
+const int PlayerInfo::kRoomNumFieldNumber;
+const int PlayerInfo::kGameIDFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PlayerInfo::PlayerInfo()
@@ -426,9 +438,13 @@ PlayerInfo::PlayerInfo(const PlayerInfo& from)
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.account().size() > 0) {
+    account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.account_);
+  }
   ::memcpy(&userid_, &from.userid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&viplevel_) -
-    reinterpret_cast<char*>(&userid_)) + sizeof(viplevel_));
+    static_cast<size_t>(reinterpret_cast<char*>(&gameid_) -
+    reinterpret_cast<char*>(&userid_)) + sizeof(gameid_));
   // @@protoc_insertion_point(copy_constructor:go.PlayerInfo)
 }
 
@@ -436,9 +452,10 @@ void PlayerInfo::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_PlayerInfo_gamecomm_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&userid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&viplevel_) -
-      reinterpret_cast<char*>(&userid_)) + sizeof(viplevel_));
+      reinterpret_cast<char*>(&gameid_) -
+      reinterpret_cast<char*>(&userid_)) + sizeof(gameid_));
 }
 
 PlayerInfo::~PlayerInfo() {
@@ -448,6 +465,7 @@ PlayerInfo::~PlayerInfo() {
 
 void PlayerInfo::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  account_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void PlayerInfo::SetCachedSize(int size) const {
@@ -466,9 +484,10 @@ void PlayerInfo::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&userid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&viplevel_) -
-      reinterpret_cast<char*>(&userid_)) + sizeof(viplevel_));
+      reinterpret_cast<char*>(&gameid_) -
+      reinterpret_cast<char*>(&userid_)) + sizeof(gameid_));
   _internal_metadata_.Clear();
 }
 
@@ -533,6 +552,50 @@ const char* PlayerInfo::_InternalParse(const char* begin, const char* end, void*
       case 6: {
         if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
         msg->set_viplevel(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string Account = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("go.PlayerInfo.Account");
+        object = msg->mutable_account();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // int32 Sate = 8;
+      case 8: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 64) goto handle_unusual;
+        msg->set_sate(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // uint32 PlatformID = 9;
+      case 9: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 72) goto handle_unusual;
+        msg->set_platformid(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // uint32 RoomNum = 10;
+      case 10: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 80) goto handle_unusual;
+        msg->set_roomnum(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // uint32 GameID = 11;
+      case 11: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 88) goto handle_unusual;
+        msg->set_gameid(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -650,6 +713,73 @@ bool PlayerInfo::MergePartialFromCodedStream(
         break;
       }
 
+      // string Account = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_account()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->account().data(), static_cast<int>(this->account().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "go.PlayerInfo.Account"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 Sate = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (64 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &sate_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 PlatformID = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (72 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &platformid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 RoomNum = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (80 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &roomnum_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 GameID = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (88 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &gameid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -712,6 +842,36 @@ void PlayerInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->viplevel(), output);
   }
 
+  // string Account = 7;
+  if (this->account().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->account().data(), static_cast<int>(this->account().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "go.PlayerInfo.Account");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      7, this->account(), output);
+  }
+
+  // int32 Sate = 8;
+  if (this->sate() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->sate(), output);
+  }
+
+  // uint32 PlatformID = 9;
+  if (this->platformid() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(9, this->platformid(), output);
+  }
+
+  // uint32 RoomNum = 10;
+  if (this->roomnum() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(10, this->roomnum(), output);
+  }
+
+  // uint32 GameID = 11;
+  if (this->gameid() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(11, this->gameid(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -761,6 +921,37 @@ void PlayerInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->viplevel(), target);
   }
 
+  // string Account = 7;
+  if (this->account().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->account().data(), static_cast<int>(this->account().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "go.PlayerInfo.Account");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        7, this->account(), target);
+  }
+
+  // int32 Sate = 8;
+  if (this->sate() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->sate(), target);
+  }
+
+  // uint32 PlatformID = 9;
+  if (this->platformid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(9, this->platformid(), target);
+  }
+
+  // uint32 RoomNum = 10;
+  if (this->roomnum() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(10, this->roomnum(), target);
+  }
+
+  // uint32 GameID = 11;
+  if (this->gameid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(11, this->gameid(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -787,6 +978,13 @@ size_t PlayerInfo::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->name());
+  }
+
+  // string Account = 7;
+  if (this->account().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->account());
   }
 
   // uint64 UserID = 1;
@@ -824,6 +1022,34 @@ size_t PlayerInfo::ByteSizeLong() const {
         this->viplevel());
   }
 
+  // int32 Sate = 8;
+  if (this->sate() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->sate());
+  }
+
+  // uint32 PlatformID = 9;
+  if (this->platformid() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->platformid());
+  }
+
+  // uint32 RoomNum = 10;
+  if (this->roomnum() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->roomnum());
+  }
+
+  // uint32 GameID = 11;
+  if (this->gameid() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->gameid());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -855,6 +1081,10 @@ void PlayerInfo::MergeFrom(const PlayerInfo& from) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.account().size() > 0) {
+
+    account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.account_);
+  }
   if (from.userid() != 0) {
     set_userid(from.userid());
   }
@@ -869,6 +1099,18 @@ void PlayerInfo::MergeFrom(const PlayerInfo& from) {
   }
   if (from.viplevel() != 0) {
     set_viplevel(from.viplevel());
+  }
+  if (from.sate() != 0) {
+    set_sate(from.sate());
+  }
+  if (from.platformid() != 0) {
+    set_platformid(from.platformid());
+  }
+  if (from.roomnum() != 0) {
+    set_roomnum(from.roomnum());
+  }
+  if (from.gameid() != 0) {
+    set_gameid(from.gameid());
   }
 }
 
@@ -899,11 +1141,17 @@ void PlayerInfo::InternalSwap(PlayerInfo* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  account_.Swap(&other->account_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(userid_, other->userid_);
   swap(age_, other->age_);
   swap(sex_, other->sex_);
   swap(gold_, other->gold_);
   swap(viplevel_, other->viplevel_);
+  swap(sate_, other->sate_);
+  swap(platformid_, other->platformid_);
+  swap(roomnum_, other->roomnum_);
+  swap(gameid_, other->gameid_);
 }
 
 ::google::protobuf::Metadata PlayerInfo::GetMetadata() const {

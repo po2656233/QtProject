@@ -11,6 +11,8 @@
 #include "baccarat.pb.h"
 #include "mahjong.pb.h"
 #include "landLords.pb.h"
+#include "cowcow.pb.h"
+#include "fishLord.pb.h"
 
 
 // Qt
@@ -18,6 +20,9 @@
 #include <QHostAddress>
 #include <QDebug>
 #include <QMessageBox>
+
+// c++
+#include <algorithm>    // std::find_if
 
 using namespace NSNetwork;
 
@@ -55,6 +60,8 @@ HandleMsg* HandleMsg::GetInstance()
     std::shared_ptr<HandleMsg> msg = Magic_Singleton<HandleMsg>::GetInstance(nullptr);
     return msg.get();
 }
+
+
 
 bool HandleMsg::connectTo(const QString &strIP, int nPort, int msecs)
 {
@@ -352,107 +359,121 @@ void HandleMsg::onError(QAbstractSocket::SocketError err)
     }
 }
 
-void HandleMsg::registerProtoMsg()
-{
-    //登录注册
-    registerMsg(typeid(go::Login).name());
-    registerMsg(typeid(go::ResResult).name());
-    registerMsg(typeid(go::Register).name());
-    registerMsg(typeid(go::ReqEnterRoom).name());
-    registerMsg(typeid(go::ReqEnterGame).name());
-    registerMsg(typeid(go::ReqExitGame).name());
-
-    //游戏房间列表
-    registerMsg(typeid(go::GameList).name());
-    registerMsg(typeid(go::GameBet).name());
-    registerMsg(typeid(go::GameBetResult).name());
-    registerMsg(typeid(go::GameHost).name());
-    registerMsg(typeid(go::GameSuperHost).name());
-    registerMsg(typeid(go::GameReady).name());
-
-    // 子游戏
-    baccaratRegister(); //百家乐
-    mahjongRegister();  //麻将
-    landLordsRegister();//斗地主
-
-    //
-}
 
 void HandleMsg::registerMsg(const char * clsName)
 {
     std::map<std::string, int>::iterator iter = m_mapMsgID.find(clsName);
     if (iter == m_mapMsgID.end())
-    {//添加
-        int value = m_mapMsgID.size() + 1;
-        m_mapMsgID.insert(std::map<std::string,int>::value_type(clsName, value));
+    {
+        m_mapMsgID.insert(std::map<std::string,int>::value_type(clsName, m_mapMsgID.size()));
     }
 }
 
-void HandleMsg::baccaratRegister()
-{
-    registerMsg(typeid(go::GameBaccaratEnter).name());       //入场
-    registerMsg(typeid(go::GameBaccaratHost).name());        //抢庄
-    registerMsg(typeid(go::GameBaccaratSuperHost).name());   //超级抢庄
-    registerMsg(typeid(go::GameBaccaratBet).name());         //下注
-    registerMsg(typeid(go::GameBaccaratBetResult).name());   //下注结果
-    registerMsg(typeid(go::GameBaccaratOver).name());        //开奖
-    // registerMsg(typeid(go::GameBaccaratCheckout).name());    //结算
-}
 
-void HandleMsg::mahjongRegister()
-{
-    registerMsg(typeid(go::GameMahjongEnter).name());       //入场
-    registerMsg(typeid(go::GameMahjongPlayer).name());      //玩家信息
-    registerMsg(typeid(go::GameMahjongBegins).name());      //开始
-    registerMsg(typeid(go::GameMahjongOutcard).name());     //出牌
-    registerMsg(typeid(go::GameMahjongOperate).name());     //操作
-    registerMsg(typeid(go::GameMahjongAward).name());       //个人得分
-    registerMsg(typeid(go::GameMahjongCheckout).name());    //所有得分
-}
-
-
-void HandleMsg::landLordsRegister()
-{
-    registerMsg(typeid(go::GameLandLordsEnter).name());       //入场
-    registerMsg(typeid(go::GameLandLordsPlayer).name());      //玩家信息
-    registerMsg(typeid(go::GameLandLordsBegins).name());      //开始
-    registerMsg(typeid(go::GameLandLordsOutcard).name());     //出牌
-    registerMsg(typeid(go::GameLandLordsOperate).name());     //操作
-    registerMsg(typeid(go::GameLandLordsAward).name());       //个人得分
-    registerMsg(typeid(go::GameLandLordsCheckout).name());    //所有得分
-}
-
-std::string HandleMsg::parseData(const char *data, size_t size)
+std::string HandleMsg::parseData(const char *data, size_t size,size_t &realSize)
 {
     // 数据反序列化
+    int id = 0;
     m_theme = 0;
     m_state = 0;
     m_unpack = "";
-    size_t nRealSize = 0;
-    char* recvBuffer = unmarshal(data, size, nRealSize);
+    realSize = 0;
+
+    char* recvBuffer = unmarshal(data, size, id, realSize);
     if (NULL == recvBuffer)
         return  std::string("");
 
     // 分解数据
     go::PacketData packet;
-    if (!packet.IsInitialized() || !packet.ParseFromArray(recvBuffer, nRealSize))
+    if (!packet.IsInitialized() || !packet.ParseFromArray(recvBuffer, realSize))
     {
         return  std::string("");
     }
 
+
+    // 真实长度 去掉mid sid
+
+
     // 需要重复拆包
-    qDebug()<<"数据大小:"<<size<<" 真实大小:"<<nRealSize;
-    if( m_headSize < size - nRealSize )
+    if( m_headSize < size - realSize )
     {
-        m_unpack.assign(data+nRealSize + m_headSize, size - nRealSize - m_headSize);
+        m_unpack.assign(data + realSize + m_headSize, size - realSize - m_headSize);
     }
 
     // 主题码 和 状态码
     m_theme = packet.mainid();
     m_state = packet.subid();
+    realSize = packet.ByteSize()-2*sizeof(packet.mainid());
+    qDebug()<<"数据大小:"<<size<<" 真实大小:"<<realSize<<" MID:"<<m_theme<<" SID:"<<m_state;
 
     // 实际可用数据
     return packet.transdata();
 
 }
 
+
+
+void HandleMsg::registerProtoMsg()
+{
+    registerMsg(typeid(go::GameBaccaratEnter).name());
+    registerMsg(typeid(go::GameBaccaratHost).name());
+    registerMsg(typeid(go::GameBaccaratSuperHost).name());
+    registerMsg(typeid(go::GameBaccaratBet).name());
+    registerMsg(typeid(go::GameBaccaratBetResult).name());
+    registerMsg(typeid(go::GameBaccaratOver).name());
+    registerMsg(typeid(go::GameBaccaratCheckout).name());
+    registerMsg(typeid(go::PacketData).name());
+    registerMsg(typeid(go::GameCowcowEnter).name());
+    registerMsg(typeid(go::GameCowcowHost).name());
+    registerMsg(typeid(go::GameCowcowSuperHost).name());
+    registerMsg(typeid(go::GameCowcowPlaying).name());
+    registerMsg(typeid(go::GameCowcowBetResult).name());
+    registerMsg(typeid(go::GameCowcowOver).name());
+    registerMsg(typeid(go::GameCowcowCheckout).name());
+    registerMsg(typeid(go::GameFishLordEnter).name());
+    registerMsg(typeid(go::GameFishLordPlaying).name());
+    registerMsg(typeid(go::GameFishLordBetResult).name());
+    registerMsg(typeid(go::GameFishLordOver).name());
+    registerMsg(typeid(go::PlayerInfo).name());
+    registerMsg(typeid(go::UserList).name());
+    registerMsg(typeid(go::PlayerRecord).name());
+    registerMsg(typeid(go::GameReady).name());
+    registerMsg(typeid(go::GameBet).name());
+    registerMsg(typeid(go::GameBetResult).name());
+    registerMsg(typeid(go::GameHost).name());
+    registerMsg(typeid(go::GameSuperHost).name());
+    registerMsg(typeid(go::GameRecord).name());
+    registerMsg(typeid(go::GameRecordList).name());
+    registerMsg(typeid(go::GameResult).name());
+    registerMsg(typeid(go::GameLandLordsEnter).name());
+    registerMsg(typeid(go::GameLandLordsPlayer).name());
+    registerMsg(typeid(go::GameLandLordsBegins).name());
+    registerMsg(typeid(go::GameLandLordsOutcard).name());
+    registerMsg(typeid(go::GameLandLordsOperate).name());
+    registerMsg(typeid(go::GameLandLordsAward).name());
+    registerMsg(typeid(go::GameLandLordsCheckout).name());
+    registerMsg(typeid(go::Register).name());
+    registerMsg(typeid(go::RegisterResult).name());
+    registerMsg(typeid(go::Login).name());
+    registerMsg(typeid(go::ResResult).name());
+    registerMsg(typeid(go::TaskItem).name());
+    registerMsg(typeid(go::TaskList).name());
+    registerMsg(typeid(go::GameList).name());
+    registerMsg(typeid(go::UserInfo).name());
+    registerMsg(typeid(go::RoomInfo).name());
+    registerMsg(typeid(go::GameBaseInfo).name());
+    registerMsg(typeid(go::GameItem).name());
+    registerMsg(typeid(go::MasterInfo).name());
+    registerMsg(typeid(go::ReqEnterRoom).name());
+    registerMsg(typeid(go::ReqEnterGame).name());
+    registerMsg(typeid(go::ReqExitGame).name());
+    registerMsg(typeid(go::GameMahjongEnter).name());
+    registerMsg(typeid(go::GameMahjongPlayer).name());
+    registerMsg(typeid(go::GameMahjongBegins).name());
+    registerMsg(typeid(go::GameMahjongOutcard).name());
+    registerMsg(typeid(go::GameMahjongOperate).name());
+    registerMsg(typeid(go::GameMahjongAward).name());
+    registerMsg(typeid(go::GameMahjongCheckout).name());
+
+    //
+}

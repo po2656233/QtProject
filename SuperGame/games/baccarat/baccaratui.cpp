@@ -359,7 +359,7 @@ bool BaccaratUI::doFrameOver(const std::string &data)
     go::GameBaccaratOver over;
     if(over.IsInitialized() && over.ParseFromArray(data.c_str(),data.length()))
     {
-        qDebug()<<"成功解析";
+        qDebug()<<"开奖成功解析";
         std::string strAwardarea = over.awardarea();
         std::string strPlayercard = over.playercard();
         std::string strBankercard = over.bankercard();
@@ -389,7 +389,7 @@ bool BaccaratUI::doFrameCheckout(const std::string &data)
     go::GameBaccaratCheckout checkOut;
     if(checkOut.IsInitialized() && checkOut.ParseFromArray(data.c_str(),data.length()))
     {
-        qDebug()<<"成功解析";
+        qDebug()<<"结算成功解析";
         checkOut.acquire();//玩家得分
         // 金币刷新
         m_remainTime = m_openTime;
@@ -444,6 +444,7 @@ bool BaccaratUI::doUpdatePlayerList(const std::string &data)
         for(int i = 0; i < userList.allinfos_size(); i++)
         {// 玩家列表
             m_modelPlayers->appendRow(new QStandardItem(userList.allinfos(i).name().c_str()));
+            qDebug()<<"玩家名称:"<<userList.allinfos(i).name().c_str();
         }
         return true;
     }
@@ -578,10 +579,9 @@ void BaccaratUI::dealCardAnimation(const std::string &strPlayerCard, const std::
 {
     if(!m_animatIsFinish)return;
 
-    //if(m_cardGroup)m_cardGroup = new QSequentialAnimationGroup;
 
     // 设置张牌
-    qDebug()<<"子集合个数:";
+    qDebug()<<"子集合个数:"<<strPlayerCard.length()<<strBankerCard.length();
     ui->poker_1->show();
     ui->poker_2->show();
     ui->poker_3->show();

@@ -1,3 +1,13 @@
+////////////////////////////////////////////////////
+/// 版权(@copyright):  智慧中华(smart china)技术有限公司
+/// 文件(@interface): uitextscroll.h
+/// 版本(@version):   1.0
+/// 作者(@author):    pitter
+/// 日期(@date)  :    2019-11-03
+/// 功能(@brief) ：
+/// 目的(@target)：
+/// 备注(@attention):
+////////////////////////////////////////////////////
 #ifndef UITEXTSCROLL_H
 #define UITEXTSCROLL_H
 

@@ -11,6 +11,7 @@
 #include "games/chineseChess/chinesechessui.h"
 
 #include "base/network/handlemsg.h"
+#include "base/common.h"
 
 
 // proto
@@ -21,6 +22,7 @@
 #include <QDebug>
 #include <QMessageBox>
 
+using namespace NSNetwork;
 SuperMan::SuperMan(QObject *parent) : QObject(parent),m_curScene(EnScene::NoScene)
 {
 
@@ -34,6 +36,7 @@ SuperMan::SuperMan(QObject *parent) : QObject(parent),m_curScene(EnScene::NoScen
 
     // 加载页
     m_loadingUI = new LoadingUI();
+
 
     // 游戏主页
     m_homeUI = new HomeUI();
@@ -182,22 +185,21 @@ void SuperMan::onHandleMsg(const QByteArray& data)
     int nCout = 0;
     QByteArray cmdInfo = data;
     do{
-        m_data = m_msg->parseData(cmdInfo.data(), cmdInfo.size());
-        if(switchCMD(m_msg->GetTheme(),m_msg->GetCode()))
+        m_data = m_msg->parseData(cmdInfo.data(), cmdInfo.size(), m_size);
+        if(m_data.empty() && 0 == m_msg->GetMID())return;
+        if(switchCMD(m_msg->GetMID(),m_msg->GetSID()))
         {
-            // qDebug()<<"正在处理"<<m_msg->GetTheme()<<"  "<<m_msg->GetCode() << data;
+            qDebug()<<"正在处理"<<m_msg->GetMID()<<"  "<<m_msg->GetSID()<<" size:"<<m_size << data;
         }
         else
         {
-            qDebug()<<"待处理"<<m_msg->GetTheme()<<"  "<<m_msg->GetCode() << data;
+            qDebug()<<"待处理"<<m_msg->GetMID()<<"  "<<m_msg->GetSID() << data;
         }
 
         cmdInfo.clear();
         std::string unpackData = m_msg->GetUnpack();
         cmdInfo.setRawData(unpackData.c_str(),unpackData.size());
-        nCout++;
-    }while( !cmdInfo.isEmpty() && nCout < 20 );
-
+    }while( !cmdInfo.isEmpty() && nCout++ < 20 );
 }
 
 void SuperMan::onLoadinGame(int gameID)
@@ -224,6 +226,7 @@ void SuperMan::onExitGame(int gameID)
     m_msg->ReqExitGame(gameID);
     onChangeScene(EnScene::NoScene,EnScene::GameFrame);
 }
+
 
 void SuperMan::onChangeScene(EnScene curScene, EnScene toScene)
 {
@@ -331,7 +334,7 @@ GameMap *SuperMan::currentMap()
 bool SuperMan::login()
 {
     go::MasterInfo info;
-    if(info.ParseFromArray(m_data.c_str(),m_data.length()))
+    if(info.ParseFromArray(m_data.c_str(), m_size))
     {
         // 界面切换->平台
         onChangeScene(EnScene::Login,EnScene::GameFrame);
