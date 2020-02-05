@@ -27,7 +27,7 @@ public:
     ~LoadingUI();
 
     // 加载资源 进度条
-    void loadSource(int gameID);
+    void loadSource(int gameID,QString name);
 
     void setMaxValue(int value);
     void setMinValue(int value);

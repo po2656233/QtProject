@@ -890,7 +890,7 @@
      <rect>
       <x>0</x>
       <y>380</y>
-      <width>61</width>
+      <width>41</width>
       <height>41</height>
      </rect>
     </property>
@@ -921,9 +921,9 @@
    <widget class="QLabel" name="label_BTime">
     <property name="geometry">
      <rect>
-      <x>760</x>
+      <x>780</x>
       <y>390</y>
-      <width>61</width>
+      <width>41</width>
       <height>41</height>
      </rect>
     </property>

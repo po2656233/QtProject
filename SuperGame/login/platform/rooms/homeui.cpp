@@ -83,7 +83,7 @@ void HomeUI::updateGameList(go::GameList &list)
             S_GameLevel = info.level();
             qDebug()<<"请求进入游戏:"<<list.items(i).id();
             S_GameID = list.items(i).id();
-            emit enterSig(S_GameID);
+            emit enterSig(S_GameID,GameName);
         });
 
         // 添加控件效果

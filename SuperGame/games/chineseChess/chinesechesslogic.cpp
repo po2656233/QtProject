@@ -35,7 +35,7 @@ bool ChineseChessLogic::CanMove(int x, int y, int toX, int toY)
     //颜色相同则不符合规则(含0x00)
     if(judgmetColor(x,y) == judgmetColor(toX,toY))
     {
-        qDebug()<<"踩到自己人了"<<x<<y<<" 自己人的位置:"<<toX<<toY;
+        qDebug()<<"踩到自己人了"<<x<<y<<" 自己人的位置:"<<toX<<toY<<"颜色"<<judgmetColor(toX,toY);
         return false;
     }
 
@@ -623,6 +623,7 @@ unsigned char ChineseChessLogic::judgmetColor(int x, int y)
 {
     if(0x00 == m_arryChessBoard[x][y])
     {//蓝
+
         return 0x00;
     }
     if(0x41 < m_arryChessBoard[x][y] && m_arryChessBoard[x][y] < 0x5A)

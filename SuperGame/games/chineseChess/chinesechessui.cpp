@@ -97,8 +97,9 @@ bool ChineseChessUI::eventFilter(QObject *watched, QEvent *event)
             }
 
             if(1 < label->indent()) return true;
-            qDebug()<<"选中";
+
             QRect rect = label->geometry();
+            qDebug()<<"选中"<<rect;
             selectPiece(rect);
         }
 
@@ -129,7 +130,7 @@ void ChineseChessUI::mouseReleaseEvent(QMouseEvent *e)
                 QPoint start =  toChessBoardPos(curRect);
                 QPoint end =  toChessBoardPos(endRect);
                 // 先检测能不能走下一步
-                qDebug()<<"下一步: "<<start.x()<<" --"<<start.y();
+                qDebug()<<"当前 x:"<<start.x()<<" y:"<<start.y()<<" 下一步: x:"<< end.x()<<" y:"<<end.y();
                 if(m_logic->CanMove(start.x(), start.y(), end.x(), end.y()))
                 {
                     //是否被将军了
@@ -222,7 +223,7 @@ QRect ChineseChessUI::adjustRect(const QPoint &pt)
 
 QPoint ChineseChessUI::toChessBoardPos(const QRect &rect)
 {
-    QRect leftTop = ui->label_JunR1->geometry();
+    static QRect leftTop = ui->label_JunR1->geometry();
     int startX = leftTop.x();
     int startY = leftTop.y();
 

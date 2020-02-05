@@ -58,7 +58,7 @@ SuperMan::SuperMan(QObject *parent) : QObject(parent),m_curScene(EnScene::NoScen
     onChangeScene(EnScene::NoScene, EnScene::Login);
 
     // 加载游戏
-    connect(m_homeUI,SIGNAL(enterSig(int)), this, SLOT(onLoadinGame(int)));
+    connect(m_homeUI,SIGNAL(enterSig(int,QString)), this, SLOT(onLoadinGame(int,QString)));
 
     // 進入游戏
     connect(m_loadingUI,SIGNAL(sigFinish(int)), this, SLOT(onEnterGame(int)));
@@ -202,14 +202,14 @@ void SuperMan::onHandleMsg(const QByteArray& data)
     }while( !cmdInfo.isEmpty() && nCout++ < 20 );
 }
 
-void SuperMan::onLoadinGame(int gameID)
+void SuperMan::onLoadinGame(int gameID, QString strName)
 {
     // 界面切换->加载游戏
     onChangeScene(EnScene::Home, EnScene::Loading);
 
     // 加载游戏（暫定50）
     m_loadingUI->setMaxValue(10);
-    m_loadingUI->loadSource(gameID);
+    m_loadingUI->loadSource(gameID,strName);
 
     m_loadingUI->setWindowState( m_homeUI->windowState() == Qt::WindowFullScreen ? Qt::WindowFullScreen : Qt::WindowNoState);
 }

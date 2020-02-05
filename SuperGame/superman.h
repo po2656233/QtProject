@@ -49,7 +49,7 @@ signals:
 public slots:
     void onChangeScene(EnScene curScene,EnScene toScene);       // 场景切换
     void onHandleMsg(const QByteArray& data);                   // 消息处理
-    void onLoadinGame(int gameID);                              // 加載游戲
+    void onLoadinGame(int gameID,QString strName);              // 加載游戲
     void onEnterGame(int gameID);                               // 进入子游戏
     void onExitGame(int gameID);                                // 退出子游戏
 

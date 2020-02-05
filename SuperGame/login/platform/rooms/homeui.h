@@ -38,7 +38,7 @@ public:
     void clearList();
     void clearAnimations();
 signals:
-    void enterSig(int);
+    void enterSig(int,QString);
 private slots:
     void on_pushButton_clicked();
 

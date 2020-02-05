@@ -34,6 +34,7 @@ LoadingUI::~LoadingUI()
     m_curValue = 0;
 }
 
+
 void LoadingUI::setMaxValue(int value)
 {
     m_maxValue = value;
@@ -56,12 +57,13 @@ void LoadingUI::setDuration(int timeout)
 
 }
 
-void LoadingUI::loadSource(int gameID)
+void LoadingUI::loadSource(int gameID,QString name)
 {
 
     ui->progressBar->reset();
     m_curValue = 0;
     m_gameID = gameID;
+    ui->label->setText(tr("正在登录\n%1").arg(name));
     ui->progressBar->setMinimum(m_minValue);
     ui->progressBar->setMaximum(m_maxValue);
 
