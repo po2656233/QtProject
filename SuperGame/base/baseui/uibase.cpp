@@ -158,7 +158,7 @@ void UIbase::addSound(const QString &strPath)
     }
 
     m_soundList->addMedia(QUrl(strPath));
-    m_soundList->setCurrentIndex(1);
+//    m_soundList->setCurrentIndex(1); 谨慎使用
 
     //m_mediaPlayer->play();
 }

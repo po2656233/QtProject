@@ -17,6 +17,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QMessageBox>
+#include <QStyleOption>
 
 LandlordUI::LandlordUI(QWidget *parent) :
     GameMap(parent),
@@ -35,50 +36,50 @@ LandlordUI::~LandlordUI()
 
 void LandlordUI::enterScene(int scene, const std::string &data)
 {
-    go::GameLandLordsEnter enter;
-    if(enter.IsInitialized() && enter.ParseFromArray(data.c_str(), data.length()))
-    {
-        // qint64 curtime = QDateTime::currentDateTime().toSecsSinceEpoch();//.toMSecsSinceEpoch();
-        m_curState = scene;
-        QString strSceneName;
-        switch (scene) {
-        case SubGameSenceStart:
-            strSceneName = "开始";
-            this->readyState();
-            break;
-        case SubGameSencePlaying:
-            strSceneName = "下注";
-            this->startState();
-            break;
-        case SubGameSenceOver:
-            strSceneName = "结算";
-            this->overState();
-            break;
-        case SubGameSenceFree://当前无用(准备阶段)
-            strSceneName = "空闲";
-            this->enterState();
-            break;
-        default:
-            break;
-        }
+//    go::GameLandLordsEnter enter;
+//    if(enter.IsInitialized() && enter.ParseFromArray(data.c_str(), data.length()))
+//    {
+//        // qint64 curtime = QDateTime::currentDateTime().toSecsSinceEpoch();//.toMSecsSinceEpoch();
+//        m_curState = scene;
+//        QString strSceneName;
+//        switch (scene) {
+//        case SubGameSenceStart:
+//            strSceneName = "开始";
+//            this->readyState();
+//            break;
+//        case SubGameSencePlaying:
+//            strSceneName = "下注";
+//            this->startState();
+//            break;
+//        case SubGameSenceOver:
+//            strSceneName = "结算";
+//            this->overState();
+//            break;
+//        case SubGameSenceFree://当前无用(准备阶段)
+//            strSceneName = "空闲";
+//            this->enterState();
+//            break;
+//        default:
+//            break;
+//        }
 
-        m_userID = enter.userid();
-        const go::UserList& list = enter.players();
-        for(int i = 0; i < list.allinfos_size(); i++)
-        {// 玩家列表
-            const  go::PlayerInfo& info = list.allinfos(i);
-            if(qint64(info.userid()) == m_userID)
-            {// 个人信息
-                ui->label_name->setText(tr("名字:")+info.name().c_str());
-                m_playerGold = info.gold();
+//        m_userID = enter.userid();
+//        const go::UserList& list = enter.players();
+//        for(int i = 0; i < list.allinfos_size(); i++)
+//        {// 玩家列表
+//            const  go::PlayerInfo& info = list.allinfos(i);
+//            if(qint64(info.userid()) == m_userID)
+//            {// 个人信息
+//                ui->label_name->setText(tr("名字:")+info.name().c_str());
+//                m_playerGold = info.gold();
 
-                //显示的时候,需除以100
-                ui->label_gold->setText(tr("金币:")+QString::number(m_playerGold/100,'f',2));
-            }
-        }
+//                //显示的时候,需除以100
+//                ui->label_gold->setText(tr("金币:")+QString::number(m_playerGold/100,'f',2));
+//            }
+//        }
 
 
-    }
+//    }
 
 }
 void LandlordUI::changeState(int state, const std::string &data)
@@ -105,42 +106,42 @@ void LandlordUI::changeState(int state, const std::string &data)
 bool LandlordUI::gameHandle(int code, const std::string &data)
 {
 
-    switch (code) {
-    case SubGameFrameReady:
-    {
+//    switch (code) {
+//    case SubGameFrameReady:
+//    {
 
-        go::GameReady ready;
-        if(ready.IsInitialized() && ready.ParseFromArray(data.c_str(), data.length()))
-        {
-            if (qint64(ready.userid()) == m_userID)
-            {// 是否自己准备
-                m_curState = SubGameFrameReady;
-            }
-        }
-        return true;
-    }
-    case SubGameFrameResult:
-    {
-        go::GameResult result;
-        if(result.IsInitialized() && result.ParseFromArray(data.c_str(), data.length()))
-        {
-            if (0 == result.flag())
-            {// 出牌成功
-                qDebug()<<"出牌成功";
-                ui->handCards->clearUp();
-            }else{
-                ui->handCards->doNot();
-                QMessageBox::warning(this,tr("提示"),tr("无效牌型"));
-                qDebug()<<"出牌失败";
-            }
-        }
+//        go::GameReady ready;
+//        if(ready.IsInitialized() && ready.ParseFromArray(data.c_str(), data.length()))
+//        {
+//            if (qint64(ready.userid()) == m_userID)
+//            {// 是否自己准备
+//                m_curState = SubGameFrameReady;
+//            }
+//        }
+//        return true;
+//    }
+//    case SubGameFrameResult:
+//    {
+//        go::GameResult result;
+//        if(result.IsInitialized() && result.ParseFromArray(data.c_str(), data.length()))
+//        {
+//            if (0 == result.flag())
+//            {// 出牌成功
+//                qDebug()<<"出牌成功";
+//                ui->handCards->clearUp();
+//            }else{
+//                ui->handCards->doNot();
+//                QMessageBox::warning(this,tr("提示"),tr("无效牌型"));
+//                qDebug()<<"出牌失败";
+//            }
+//        }
 
-        return true;
-    }
-    default:
-        break;
-    }
-    qDebug()<<"无效---";
+//        return true;
+//    }
+//    default:
+//        break;
+//    }
+//    qDebug()<<"无效---";
     return false;
 }
 
@@ -189,47 +190,47 @@ void LandlordUI::overState()
 bool LandlordUI::doStateStart(const string &data)
 {
     resetTabel();
-    go::GameLandLordsBegins beginInfo;
-    if(beginInfo.IsInitialized() && beginInfo.ParseFromArray(data.c_str(), data.length()))
-    {
+//    go::GameLandLordsBegins beginInfo;
+//    if(beginInfo.IsInitialized() && beginInfo.ParseFromArray(data.c_str(), data.length()))
+//    {
 
-        std::string strBottomCard = beginInfo.cardsbottom();
-        std::string strHandCard = beginInfo.cardshand();
-        for(size_t i = 0; i < 17; i++)
-        {
-            ui->handCards_player2->addCard(0);
-            ui->handCards_player3->addCard(0);
-        }
+//        std::string strBottomCard = beginInfo.cardsbottom();
+//        std::string strHandCard = beginInfo.cardshand();
+//        for(size_t i = 0; i < 17; i++)
+//        {
+//            ui->handCards_player2->addCard(0);
+//            ui->handCards_player3->addCard(0);
+//        }
 
-        for(size_t i = 0; i < strBottomCard.length(); i++)
-        {
-            ui->handCards_bottom->addCard(strBottomCard.at(i));
-        }
+//        for(size_t i = 0; i < strBottomCard.length(); i++)
+//        {
+//            ui->handCards_bottom->addCard(strBottomCard.at(i));
+//        }
 
-        for(size_t i = 0; i < strHandCard.length(); i++)
-        {
-            ui->handCards->addCard(strHandCard.at(i),i);
-        }
-        return true;
-    }
+//        for(size_t i = 0; i < strHandCard.length(); i++)
+//        {
+//            ui->handCards->addCard(strHandCard.at(i),i);
+//        }
+//        return true;
+//    }
     return false;
 }
 
 bool LandlordUI::doStatePlaying(const string &data)
 {
-    go::GameLandLordsOperate operateInfo;
-    if(operateInfo.IsInitialized() && operateInfo.ParseFromArray(data.c_str(), data.length()))
-    {
+//    go::GameLandLordsOperate operateInfo;
+//    if(operateInfo.IsInitialized() && operateInfo.ParseFromArray(data.c_str(), data.length()))
+//    {
 
-        ui->handCards_out->clearCards();
-        int code = operateInfo.code(); //解析用
-        std::string strOutCard = operateInfo.cards();
-        for(size_t i = 0; i < strOutCard.length(); i++)
-        {
-            ui->handCards_out->addCard(strOutCard.at(i));
-        }
-        return true;
-    }
+//        ui->handCards_out->clearCards();
+//        int code = operateInfo.code(); //解析用
+//        std::string strOutCard = operateInfo.cards();
+//        for(size_t i = 0; i < strOutCard.length(); i++)
+//        {
+//            ui->handCards_out->addCard(strOutCard.at(i));
+//        }
+//        return true;
+//    }
     return false;
 }
 

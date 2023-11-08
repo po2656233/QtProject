@@ -1,10 +1,12 @@
 ﻿@echo OFF
+chcp  65001
 REM '待处理的Proto文件'
 @echo "-----------Proto-file------------------"
-for /R ".\" %%i in (*.proto) do (E:\Qt_PRJ\goodPrj\QtProject\SuperGame\base\network\protobuffer\proto\protoc.exe -I=%~dp0 --cpp_out=..\include  %%i
-@echo "exec->file:%%i ")
+
+for /R ".\" %%i in (*.proto) do (..\lib\protoc.exe -I=%~dp0 --cpp_out=..\include  %%i
+echo "exec->file:%%i ")
 REM '生成的golang文件'
-@echo "------------Go-file--------------------"
+@echo "------------cpp-file--------------------"
 for /R "..\go" %%s in (*.cpp) do (@echo "creating->file:%%s")
 
 REM '区分文件夹和文件'
